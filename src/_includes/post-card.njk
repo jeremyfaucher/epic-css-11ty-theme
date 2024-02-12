@@ -1,0 +1,8 @@
+<li>
+<a href="{{ post.url }}" class="flex"><img src="{{ post.data.featuredImage }}" alt="{{ post.data.imageAlt }}"  class="mb-6" width="500" height="250"></a>
+<h3 class="mb-40"><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+{%- if (tag == "tools-page") -%}
+{%- else -%}
+<a href="/blog/{{ post.data.categorySlug }}" class="flex justify-end text-sm">{{ post.data.categoryName }}</a>
+{%- endif -%}
+</li>

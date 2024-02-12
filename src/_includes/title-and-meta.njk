@@ -1,0 +1,22 @@
+{%- if tag == 'home-page' -%}
+<title>11ty Theme - by Design 2 SEO</title>
+<meta name="description" content="Quisque porttitor lectus at lacus vulputate, at gravida quam laoreet. Morbi feugiat velit in ante accumsan maximus. Etiam maximus laoreet lobortis. Suspendisse a turpis justo. Nulla in dui tellus. Etiam pellentesque mi in turpis sagittis, eu volutpat est blandit. Nulla facilisi.">
+{%- elif tag == 'about-page' -%}
+<title>About - 11ty Theme </title>
+<meta name="description" content="Quisque porttitor lectus at lacus vulputate, at gravida quam laoreet. Morbi feugiat velit in ante accumsan maximus. Etiam maximus laoreet lobortis. Suspendisse a turpis justo. Nulla in dui tellus. Etiam pellentesque mi in turpis sagittis, eu volutpat est blandit. Nulla facilisi.">
+{%- elif tag == 'blog-page' -%}
+<title>Blog - 11ty Theme</title>
+<meta name="description" content="Quisque porttitor lectus at lacus vulputate, at gravida quam laoreet. Morbi feugiat velit in ante accumsan maximus. Etiam maximus laoreet lobortis. Suspendisse a turpis justo. Nulla in dui tellus. Etiam pellentesque mi in turpis sagittis, eu volutpat est blandit. Nulla facilisi.">
+{%- elif tag == 'graphic-design-page' -%}
+<title>Graphic Design Blog - 11ty Theme</title>
+<meta name="description" content="Quisque porttitor lectus at lacus vulputate, at gravida quam laoreet. Morbi feugiat velit in ante accumsan maximus. Etiam maximus laoreet lobortis. Suspendisse a turpis justo. Nulla in dui tellus. Etiam pellentesque mi in turpis sagittis, eu volutpat est blandit. Nulla facilisi.">
+{%- elif tag == 'web-design-page' -%}
+<title>Web Design Blog - 11ty Theme</title>
+<meta name="description" content="Quisque porttitor lectus at lacus vulputate, at gravida quam laoreet. Morbi feugiat velit in ante accumsan maximus. Etiam maximus laoreet lobortis. Suspendisse a turpis justo. Nulla in dui tellus. Etiam pellentesque mi in turpis sagittis, eu volutpat est blandit. Nulla facilisi.">
+{%- elif tag == 'web-development-page' -%}
+<title>Web Development - Design 2 SEO</title>
+<meta name="description" content="Building resilient and agile websites takes continual learning as a web developer. I aim to be a resource that will give you an architectural understanding and a plan for creating robust developments.">
+{%- else -%}
+<title>{{ title }} - 11ty Theme</title>
+<meta name="description" content="{{ description }}">
+{%- endif -%}

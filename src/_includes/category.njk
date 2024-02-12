@@ -1,0 +1,29 @@
+{%- include 'breadcrumb-cat.njk' -%}
+{%- include 'category-intro.njk' -%}
+<ul class="grid grid-col-3 gap-32">
+{%- if tag == 'tools-page' -%}
+{%- for post in collections.toolsPosts | reverse -%}
+{%- include 'post-card.njk' -%}
+{%- endfor -%}
+{%- elif tag == 'graphic-design-page' -%}
+{%- for post in collections.graphicDesignPosts | reverse -%}
+{%- include 'post-card.njk' -%}
+{%- endfor -%}
+{%- elif tag == 'web-design-page' -%}
+{%- for post in collections.webDesignPosts | reverse -%}
+{%- include 'post-card.njk' -%}
+{%- endfor -%}
+{%- elif tag == 'seo-page' -%}
+{%- for post in collections.seoPosts | reverse -%}
+{%- include 'post-card.njk' -%}
+{%- endfor -%}
+{%- elif tag == 'web-development-page' -%}
+{%- for post in collections.webDevelopmentPosts | reverse -%}
+{%- include 'post-card.njk' -%}
+{%- endfor -%}
+{%- else -%}
+{%- for post in collections.blog | reverse -%}
+{%- include 'post-card.njk' -%}
+{%- endfor -%}
+{%- endif -%}
+</ul>
