@@ -4,18 +4,18 @@
   "description": "11ty Starter Theme",
   "main": "index.njk",
   "scripts": {
-    "start": "npm-run-all css-compile --parallel watch:*",
+    "start": "npm-run-all epic-compile --parallel watch:*",
     "watch:start": "eleventy --serve",
     "watch:sass": "sass --watch src/sass/index.scss:src/_includes/style.css",
     "build-production": "eleventy",
-    "css-compile": "sass --style expanded --source-map --embed-sources --no-error-css --quiet src/my-epic-css/index.scss:src/_includes/style.css"
+    "epic-compile": "sass --style expanded --source-map --embed-sources --no-error-css --quiet src/my-epic-css/index.scss:src/_includes/style.css"
   },
   "keywords": [],
   "author": "Jeremy Faucher",
   "license": "ISC",
   "dependencies": {
     "bufferutil": "^4.0.5",
-    "epic-css": "^0.1.0",
+    "epic-css": "^0.2.0",
     "speedlify-score": "^2.0.2",
     "utf-8-validate": "^5.0.7"
   },
