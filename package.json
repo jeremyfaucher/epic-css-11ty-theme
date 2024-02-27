@@ -8,14 +8,16 @@
     "watch:start": "eleventy --serve",
     "watch:sass": "sass --watch src/sass/index.scss:src/_includes/style.css",
     "build-production": "eleventy",
-    "epic-compile": "sass --style expanded --source-map --embed-sources --no-error-css --quiet src/my-epic-css/index.scss:src/_includes/style.css"
+    "epic-compile": "sass --style expanded --source-map --embed-sources --no-error-css --quiet src/my-epic-css/index.scss:src/_includes/style.css",
+    "epic-build": "node ./node_modules/epic-css/src/epic-build.js",
+    "epic-light": "node ./node_modules/epic-css/src/epic-light.js"
   },
   "keywords": [],
   "author": "Jeremy Faucher",
   "license": "ISC",
   "dependencies": {
     "bufferutil": "^4.0.5",
-    "epic-css": "^0.2.0",
+    "epic-css": "^0.3.0",
     "speedlify-score": "^2.0.2",
     "utf-8-validate": "^5.0.7"
   },

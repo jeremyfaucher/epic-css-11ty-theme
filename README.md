@@ -2,7 +2,7 @@
 
 A starter [11ty](https://www.11ty.dev/) theme (using the [v2.0 release](https://www.11ty.dev/)) integrated with [epic-css](https://www.npmjs.com/package/epic-css) that is an utility-first UI library.
 
-## Getting Started
+### Getting Started
  Clone from [Epic CSS - 11ty Theme](https://github.com/jeremyfaucher/epic-css-11ty-theme) GitHub.
  
 1. Make a project directory and navigate to it if you don't already have one:
@@ -39,10 +39,12 @@ You will see a folder named my-epic-css with and index.scss file where you can c
 - Flex column for mobile first screens below medium: `flex-col`
 - Padding top 24px: `pt-24` or padding top and bottom 24px `py-24`.
 - Margin bottom 80px: `mb-80`
-- Gap of 24px: `flex` `gap-24`
+- Gap of 24px: `flex` `gap-24` 
 
-## epic-css
-A utility-first CSS framework that easily integrates with any node.js project like 11ty or Next.js. Yes it is very similar Tailwind but much more flexible and can be add to WordPress or PHP projects.
+## Epic CSS
+A utility-first CSS framework that easily integrates with any node.js project like 11ty or Next.js. Yes it is very similar Tailwind but much more flexible and can be added to WordPress or PHP projects.
+
+## How to initialize a new node.js project
 
 1. **Initialize a new project**: Open your terminal or command prompt and navigate to the directory where you want to create your project. Then, run the following commands to create a new directory for your project and initialize it with npm (Node Package Manager):
 ```
@@ -52,6 +54,8 @@ npm init -y
 ```
 The `npm init -y` command will initialize a new npm project with default settings, automatically generating a `package.json` file.
 
+## Quick Start
+
 2. **Install dependencies**: 
 ```
 npm install sass
@@ -59,7 +63,15 @@ npm install epic-css
 ```
 This will install Sass and Epic CSS in your `package.json` file as dependencies.
 
-3. Add a folder in the `src` folder or your projects main folder and give it a name of your choice like `my-epic-css`. Then create `index.scss` file and add the imports like this:
+3. **Add script command**
+In your package.json file add the `epic-compile` command.
+
+```
+"epic-compile": "sass --style expanded --source-map --embed-sources --no-error-css --quiet src/my-epic-css/index.scss:src/_includes/style.css"
+```
+To use, run `npm run epic-compile`
+
+4. Add a folder in the `src` folder or your projects main folder and give it a name of your choice like `my-epic-css`. Then create `index.scss` file and add the imports like this:
 ```
 @import  "../../node_modules/epic-css/src/index";
 ```
@@ -84,3 +96,51 @@ my-project/
 ```
     
 Epic CSS will soon be shipping with the ability to only build the CSS that is being used in the `.html`,  `.njk`, `.php` and more.
+
+## Remove any styles that are not in your project from .css build
+
+1. Add `epicConfig.js` file to the root of your project where your package.json lives.
+
+```js
+module.exports = {
+    // project source folder where html, nunjucks or php files are
+    projectDir: './src',
+    // where epic css theme folder lives
+    epicThemeDir: './src/my-epic-css',
+    // folder and file where project style sheet lives
+    projectStyleDir: './src/_includes/style.css'
+};
+```
+
+2. Add the following commands as of version 0.3.0
+
+```js
+"epic-light": "node ./node_modules/epic-css/src/epic-light.js",
+"epic-build": "node ./node_modules/epic-css/src/epic-build.js"
+```
+
+3. Run `npm run epic-build` to do a quick start and add a pr-styles.css to your project Epic CSS theme folder.
+
+4. Then run `npm run epic-light` to search your project file from the projectDir and filter the found classes against the pre-light.css and build lightened version of your project styles.css.  
+
+
+## Known Issues
+
+None at the moment.
+
+## Release Notes
+
+### 0.2.0
+
+Initial release of epic-css
+
+### 0.3.0
+
+-   Added epic-build - this builds like epic-compile but also adds a pre-light.css to the my-epic-css folder.
+-   Added epic-light - this uses the pre-light.css to filter used project class results and builds to project style.css.
+
+## Contribution
+
+This extension is open-source, contributions are always welcome!
+
+This project is licensed under the ISC License.
