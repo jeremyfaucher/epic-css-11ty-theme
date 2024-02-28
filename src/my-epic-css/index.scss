@@ -1,9 +1,27 @@
-// @import "../../node_modules/epic-css/src/_base";
-// @import "../../node_modules/epic-css/src/_fontramp";
-// @import "../../node_modules/epic-css/src/_colors";
-// @import "../../node_modules/epic-css/src/_images";
-// @import "../../node_modules/epic-css/src/grid";
-// @import "../../node_modules/epic-css/src/_spacing";
+@import "../../node_modules/epic-css/src/_variables";
+// Define a SASS variable
+$body-font-size: 16px;
+$container-width: 640px;
 
+@import "../../node_modules/epic-css/src/_base";
+// Custom Sass
+pre {
+    background: #0b2938;
+    padding: 1.5em 14px;
+    margin-bottom: 2rem;
+    overflow: auto;
+    border-radius: 1rem;
+}
 
-@import "../../node_modules/epic-css/src/index";
+code {
+    color: #f8f8f2;
+    overflow: auto;
+}
+
+@import "../../node_modules/epic-css/src/_colors";
+@import "../../node_modules/epic-css/src/_fontramp";
+@import "../../node_modules/epic-css/src/_images";
+@import '../../node_modules/epic-css/src/_grid';
+@import '../../node_modules/epic-css/src/_spacers';
+
+// @import "../sass/index";
