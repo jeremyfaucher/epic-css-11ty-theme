@@ -1,21 +1,12 @@
 @import "../../node_modules/epic-css/src/_variables";
 // Define a SASS variable
 $body-font-size: 16px;
-$container-width: 640px;
+$container-width: 840px;
 
 @import "../../node_modules/epic-css/src/_base";
 // Custom Sass
-pre {
-    background: #0b2938;
-    padding: 1.5em 14px;
-    margin-bottom: 2rem;
-    overflow: auto;
-    border-radius: 1rem;
-}
-
-code {
-    color: #f8f8f2;
-    overflow: auto;
+.bg-color {
+    background-color: #64d6ff;
 }
 
 @import "../../node_modules/epic-css/src/_colors";

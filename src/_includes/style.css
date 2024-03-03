@@ -73,6 +73,30 @@ hr {
   border-top: 1px dotted #efefef;
 }
 
+.bg-color {
+  background-color: #64d6ff;
+}
+
+.clr-primary {
+  color: #3ccbd6;
+}
+
+.clr-secondary {
+  color: #f82fab;
+}
+
+a.underline-clr {
+  text-decoration-color: #f82fab;
+}
+
+.bg-color {
+  background-color: #082027;
+}
+
+.bg-black {
+  background: black;
+}
+
 .text-center {
   text-align: center;
 }
@@ -95,26 +119,6 @@ hr {
 
 .font-bold {
   font-weight: 700;
-}
-
-.clr-primary {
-  color: #3ccbd6;
-}
-
-.clr-secondary {
-  color: #f82fab;
-}
-
-a.underline-clr {
-  text-decoration-color: #f82fab;
-}
-
-.bg-color {
-  background-color: #082027;
-}
-
-.bg-black {
-  background: black;
 }
 
 img {
@@ -331,7 +335,7 @@ article img {
 
 .container {
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: 840px;
   box-sizing: border-box;
 }
 
