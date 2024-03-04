@@ -1,18 +1,41 @@
+/* Theme your site here
+/* base styles are html tags only like a, h1 and img.
+*/
 @import "../../node_modules/epic-css/src/_variables";
-// Define a SASS variable
-$body-font-size: 16px;
-$container-width: 840px;
+
+// Define theme Sass color variables
+$clr-body-bg: hsl(198deg 64% 10%);
+
+// Define theme Sass fontramp variables awaw
+$fs-body: 1.125rem;
+$lh-body: 1.9rem;
+$lh-p: 1.9rem;
+
+// Define theme Sass grid variables
+$container-width: 940px;
 
 @import "../../node_modules/epic-css/src/_base";
-// Custom Sass
-.bg-color {
-    background-color: #64d6ff;
+
+// Add custom base styles for semantic html
+pre {
+    background: #0b2938;
+    padding: 1.5em 14px;
+    margin-bottom: 2rem;
+    overflow: auto;
+    border-radius: 1rem;
+}
+code {
+    font-size: 1.2rem;
+    color: #f8f8f2;
+    overflow: auto;
 }
 
 @import "../../node_modules/epic-css/src/_colors";
+// Add custom color styles here
 @import "../../node_modules/epic-css/src/_fontramp";
+// Add custom fontramp styles here
 @import "../../node_modules/epic-css/src/_images";
-@import '../../node_modules/epic-css/src/_grid';
-@import '../../node_modules/epic-css/src/_spacers';
-
-// @import "../sass/index";
+// Add custom image styles here
+@import "../../node_modules/epic-css/src/_grid";
+// Add custom grid styles here
+@import "../../node_modules/epic-css/src/_spacers";

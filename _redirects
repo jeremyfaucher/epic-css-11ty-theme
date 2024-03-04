@@ -1,0 +1,9 @@
+# Redirects from what the browser requests to what we serve
+/tools/image-alt-tag-checker/    /tools/image-alt-text-checker/
+/blog/web-development/css/svg-text-with-video-background/    /blog/web-development/html-and-css/svg-text-with-video-background/
+/blog/web-development/css/perspective-css/    /blog/web-development/html-and-css/perspective-css/
+/blog/web-development/css/3d-type-using-perspective-css/    /blog/web-development/html-and-css/perspective-css/
+/blog/web-development/css/dynamic-multi-grid-navigation/    /blog/web-development/html-and-css/dynamic-multi-grid-navigation/
+/blog/web-development/aria-best-practices/    /blog/web-development/html-and-css/aria-best-practices/
+/tools/annotate/    /tools/image-annotation-tool/
+/tools/image-annotation-editor/    /tools/image-annotation-tool/		

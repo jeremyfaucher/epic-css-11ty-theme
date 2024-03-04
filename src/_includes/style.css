@@ -1,12 +1,16 @@
+/* Theme your site here
+/* base styles are html tags only like a, h1 and img.
+*/
 body {
   font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 1.125rem;
+  line-height: 1.9rem;
   color: #d4d4d4;
-  margin: 0px;
+  margin: 3px;
 }
 
 p {
-  line-height: 24px;
+  line-height: 1.9rem;
 }
 
 h1, h2, h3, h4, p, ul {
@@ -14,22 +18,22 @@ h1, h2, h3, h4, p, ul {
 }
 
 h1, .h1 {
-  font-size: 32px;
+  font-size: 40px;
   line-height: 40px;
 }
 
 h2, .h2 {
-  font-size: 24px;
+  font-size: 32px;
   line-height: 32px;
 }
 
 h3, .h3 {
-  font-size: 20px;
+  font-size: 28px;
   line-height: 28px;
 }
 
 h4, .h4 {
-  font-size: 16px;
+  font-size: 20px;
   line-height: 20px;
 }
 
@@ -47,7 +51,7 @@ article ul {
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 28px;
   line-height: 28px !important;
 }
 
@@ -73,8 +77,18 @@ hr {
   border-top: 1px dotted #efefef;
 }
 
-.bg-color {
-  background-color: #64d6ff;
+pre {
+  background: #0b2938;
+  padding: 1.5em 14px;
+  margin-bottom: 2rem;
+  overflow: auto;
+  border-radius: 1rem;
+}
+
+code {
+  font-size: 1.2rem;
+  color: #f8f8f2;
+  overflow: auto;
 }
 
 .clr-primary {
@@ -85,16 +99,12 @@ hr {
   color: #f82fab;
 }
 
-a.underline-clr {
+a.clr-underline {
   text-decoration-color: #f82fab;
 }
 
-.bg-color {
-  background-color: #082027;
-}
-
-.bg-black {
-  background: black;
+.clr-body-bg {
+  background-color: hsl(198, 64%, 10%);
 }
 
 .text-center {
@@ -335,7 +345,7 @@ article img {
 
 .container {
   margin: 0 auto;
-  max-width: 840px;
+  max-width: 940px;
   box-sizing: border-box;
 }
 
@@ -783,6 +793,10 @@ article img {
 
 .mt-4 {
   margin-top: 0.25rem;
+}
+
+.mt-6 {
+  margin-top: 0.375rem;
 }
 
 .mt-8 {
