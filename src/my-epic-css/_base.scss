@@ -18,7 +18,7 @@ h1, h2, h3, h4, p, ul {
   }
   h1, .h1 {
     font-size: $fs-h1;
-    line-height: $fs-h1;
+    line-height: $lh-h1;
   }
   
   h2, .h2 {
@@ -74,6 +74,11 @@ h1, h2, h3, h4, p, ul {
     &.underline-clr {
       text-decoration: underline;
     }
+
+    &.underline-clr:hover {
+      color: $clr-secondary;
+    }
+    
   }
   
   hr {

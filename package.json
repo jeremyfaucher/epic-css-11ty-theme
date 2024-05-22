@@ -8,7 +8,6 @@
     "watch:start": "eleventy --serve",
     "build-production": "eleventy",
     "watch:sass": "sass --watch src/my-epic-css/index.scss:src/_includes/style.css",
-    "epic-compile": "sass --style expanded --source-map --embed-sources --no-error-css --quiet src/my-epic-css/index.scss:src/_includes/style.css",
     "epic-build": "node ./node_modules/epic-css/src/epic-build.js",
     "epic-light": "node ./node_modules/epic-css/src/epic-light.js"
   },

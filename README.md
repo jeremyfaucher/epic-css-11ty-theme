@@ -17,7 +17,7 @@ cd my-blog-name
 git clone https://github.com/jeremyfaucher/epic-css-11ty-theme.git
 cd epic-css-11ty-theme
 ```
-3. Install dependences
+3. Install dependencies
 ```
 npm install
 ```
@@ -55,49 +55,6 @@ cd my-node-project
 npm init -y
 ```
 The `npm init -y` command will initialize a new npm project with default settings, automatically generating a `package.json` file.
-
-## Quick Start
-
-2. **Install dependencies**: 
-```
-npm install sass
-npm install epic-css
-```
-This will install Sass and Epic CSS in your `package.json` file as dependencies.
-
-3. **Add script command**
-In your package.json file add the `epic-compile` command.
-
-```
-"epic-compile": "sass --style expanded --source-map --embed-sources --no-error-css --quiet src/my-epic-css/index.scss:src/_includes/style.css"
-```
-To use, run `npm run epic-compile`
-
-4. Add a folder in the `src` folder or your projects main folder and give it a name of your choice like `my-epic-css`. Then create `index.scss` file and add the imports like this:
-```
-@import  "../../node_modules/epic-css/src/index";
-```
-or individually like:
-```
-@import  "../../node_modules/epic-css/src/_base";
-@import  "../../node_modules/epic-css/src/_fontramp";
-@import  "../../node_modules/epic-css/src/_colors";
-@import  "../../node_modules/epic-css/src/_images";
-@import  "../../node_modules/epic-css/src/grid";
-@import  "../../node_modules/epic-css/src/_spacing";
-```
-For this folder structure or adjust as needed.
-```
-my-project/
-    ├── src/
-    │   └── my-epic-css/
-    │       └── index.scss 
-    ├── node_modules/
-    ├── package.json
-    └── README.md
-```
-    
-Epic CSS will soon be shipping with the ability to only build the CSS that is being used in the `.html`,  `.njk`, `.php` and more.
 
 ## Remove any styles that are not in your project from .css build
 
