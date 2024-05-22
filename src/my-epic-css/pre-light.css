@@ -297,14 +297,14 @@ article img {
     flex-direction: row;
   }
 }
-@media (min-width: 900px) {
-  .grid-col-2 {
-    grid-template-columns: 1fr 1fr;
-  }
-  .grid-col-3 {
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  }
+.grid-col-2 {
+  grid-template-columns: repeat(auto-fit, minmax(331px, 1fr));
 }
+
+.grid-col-3 {
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+}
+
 .grid {
   display: grid;
 }
