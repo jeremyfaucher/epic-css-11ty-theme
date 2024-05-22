@@ -1,0 +1,82 @@
+// font ramp
+
+body {
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: $fs-body;
+    line-height: $lh-body;
+    color: #d4d4d4;
+    margin: 3px;
+  }
+  
+  p {
+    line-height: $lh-p;
+  }
+
+  // set base for browsers
+h1, h2, h3, h4, p, ul {
+    margin-top: 0;
+  }
+  h1, .h1 {
+    font-size: $fs-h1;
+    line-height: $fs-h1;
+  }
+  
+  h2, .h2 {
+    font-size: $fs-h2;
+    line-height: $fs-h2;
+  }
+  h3, .h3 {
+    font-size: $fs-h3;
+    line-height: $fs-h3;
+  }
+  h4, .h4 {
+    font-size: $fs-h4;
+    line-height: $fs-h4;
+  }
+  
+  article {
+  
+    h2 {
+      margin-bottom: 12px;
+    }
+  
+    p {
+      margin-top: 0px;
+      margin-bottom: 2rem;
+    }
+    
+    ul {
+    padding-left: 3rem;
+    list-style-type: circle;
+    line-height: 2rem;
+}
+  }
+  
+  h3 {
+    font-size: $fs-h3;
+    line-height: $fs-h3 !important;
+  }
+  
+  ul {
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  a {
+    text-decoration: none;
+    text-underline-offset: 4px;
+    color: #d4d4d4;
+  
+    &:hover {
+      text-decoration: underline;
+    }
+  
+    &.underline-clr {
+      text-decoration: underline;
+    }
+  }
+  
+  hr {
+    border: 0;
+    border-top: 1px dotted #efefef;
+  }

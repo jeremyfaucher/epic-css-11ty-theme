@@ -1,0 +1,197 @@
+@use "sass:math";
+
+$breakpoints: (
+  "xs": 0,
+  "sm": 480px,
+  "md": 820px,
+  "lg": 960px,
+  "xl": 1200px,
+);
+
+@mixin xs {
+  @media (min-width: map-get($breakpoints, "xs")) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: map-get($breakpoints, "sm")) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: map-get($breakpoints, "md")) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: map-get($breakpoints, "lg")) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: map-get($breakpoints, "xl")) {
+    @content;
+  }
+}
+
+@mixin breakpoint($bp: 0) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}
+
+// justify
+$justify-content-name: start, end, center, between, around, evenly;
+$justify-content-values: flex-start, flex-end, center, space-between, space-around, space-evenly;
+
+@each $val in $justify-content-name {
+  $justify-content: nth($justify-content-values, index($justify-content-name, $val));
+
+  .justify-#{$val} {
+    justify-content: $justify-content;
+  }
+}
+
+// align content
+$align-content-name: start, end, center, between, around, stretch;
+$align-content-values: flex-start, flex-end, center, space-between, space-around, space-stretch;
+
+@each $val in $align-content-name {
+  $align-content: nth($align-content-values, index($align-content-name, $val));
+
+  .content-#{$val} {
+    align-content: $align-content;
+  }
+}
+
+// align items
+$align-items-name: start, end, center, between, around, stretch;
+$align-items-values: flex-start, flex-end, center, space-between, space-around, space-stretch;
+
+@each $val in $align-items-name {
+  $align-items: nth($align-items-values, index($align-items-name, $val));
+
+  .items-#{$val} {
+    align-items: $align-items;
+  }
+}
+
+// justify content classes
+// @each $val in $layout-values {
+//  .justify-#{$val} {
+//    justify-content: $val;
+//  }
+//}
+
+
+.flex-col {
+  flex-direction: column;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+// Start media querys
+
+$grid-fractions: (
+  "25": 25%,
+  "50": 50%,
+  "75": 75%,
+);
+
+// widths
+@each $breakpoint, $size in $breakpoints {
+  @media (min-width: #{$size}) {
+    @each $key, $value in $grid-fractions {
+      .#{$breakpoint}-w-#{$key} {
+        width: $value;
+      }
+    }
+  }
+}
+
+
+
+// gaps
+// @each $key, $val in $grid_gaps {
+//   .gap-#{$val} {
+//     gap: $val;
+//   }
+// }
+
+// gaps
+// @each $breakpoint, $size in $breakpoints {
+//   @media (min-width: #{$size}) {
+//     @each $key, $value in $grid-gaps {
+//       .#{$breakpoint}\:gap-#{$key} {
+//         gap: $value;
+//       }
+//     }
+//   }
+// }
+
+// flex direction
+@each $breakpoint, $size in $breakpoints {
+  @media (min-width: #{$size}) {
+
+    .#{$breakpoint}-flex-row {
+      flex-direction: row;
+    }
+
+  }
+}
+
+// Start grid
+
+@media (min-width: 900px) {
+  .grid-col-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-col-3 {
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    // grid-template-columns: repeat(3, minmax(262px, 1fr));
+  }
+}
+
+.grid {
+  display: grid;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.margin-auto {
+  margin: 0 auto;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex {
+  display: flex;
+}
+
+.wrapper {
+  padding: 0 5%;
+}
+
+// Use the variable in your styles
+.container {
+  margin: 0 auto;
+  max-width: $container-width; // Using the variable
+  box-sizing: border-box;
+}
+
+.container-post {
+  margin: 0 auto;
+  max-width: 1000px;
+  box-sizing: border-box;
+}
