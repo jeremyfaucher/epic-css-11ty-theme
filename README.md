@@ -1,64 +1,36 @@
-# epic-css-11ty-theme
+<h2>Clone and run the Epic CSS 11ty theme</h2>
 
-See [live demo site](https://epic-css-11ty-theme.netlify.app/)
+1. Make a project directory and navigate to it if you don't already have one.
 
-A starter [11ty](https://www.11ty.dev/) theme (using the [v2.0 release](https://www.11ty.dev/)) integrated with [epic-css](https://www.npmjs.com/package/epic-css) that is an utility-first UI library.
+    ```sh
+    mkdir my-blog-name
+    cd my-blog-project
+    ```
+2. From your new directory folder clone the [Epic CSS 11ty Theme](https://github.com/jeremyfaucher/epic-css-11ty-theme) from GitHub.
 
-### Getting Started
- Clone from [Epic CSS - 11ty Theme](https://github.com/jeremyfaucher/epic-css-11ty-theme) GitHub.
- 
-1. Make a project directory and navigate to it if you don't already have one:
-```
-mkdir my-blog-name
-cd my-blog-name
-```
-2. Clone this Repository and navigate to it.
-```cmd
-git clone https://github.com/jeremyfaucher/epic-css-11ty-theme.git
-cd epic-css-11ty-theme
-```
+    ```sh
+    git clone https://github.com/jeremyfaucher/epic-css-11ty-theme.git
+    cd epic-css-11ty-theme
+    ```
+
 3. Install dependencies
-```
-npm install
-```
-4. Run Eleventy to start server and follow to localhost URL http://localhost:8080/.
-```
-npm run start
-```
-The `npm run start` command will fire up `eleventy --serve` and watch for any changes to your files. Changes will be auto updated in browser for fast iterating.
 
-You will see a folder named my-epic-css with and index.scss file where you can customize your Epic CSS integration.
+    ```sh
+    npm install
+    ```
+4. Run Eleventy to start the server and follow to the localhost URL http://localhost:8080/.
 
-## Example usage
+    ```sh
+    npm run start
+    ```
 
-```html
-<div class="container flex flex-col md-flex-row gap-40 items-center mb-80">
-```
-- Wrapper for side gutters of 5%: `wrapper`
-- Container for max width: `container`
-- Push a log to left and nav to right use `flex` `justify-between` `items-center`.
-- Medium screen and up flexbox row: `md-flex-row`
-- Flex column for mobile first screens below medium: `flex-col`
-- Padding top 24px: `pt-24` or padding top and bottom 24px `py-24`.
-- Margin bottom 80px: `mb-80`
-- Gap of 24px: `flex` `gap-24` 
+    The `npm run start` command will fire up `eleventy --serve` and watch for any changes to your files. Changes will be auto updated in the browser for fast iterating.
 
-## Epic CSS
-A utility-first CSS framework that easily integrates with any node.js project like 11ty or Next.js. Yes it is very similar Tailwind but much more flexible and can be added to WordPress or PHP projects.
+    You will see a folder named `my-epic-css` with and index.scss file in `src` folder, where you can customize your Epic CSS integration.
 
-## How to initialize a new node.js project
+## Build a light version of your CSS
 
-1. **Initialize a new project**: Open your terminal or command prompt and navigate to the directory where you want to create your project. Then, run the following commands to create a new directory for your project and initialize it with npm (Node Package Manager):
-```
-mkdir my-node-project
-cd my-node-project
-npm init -y
-```
-The `npm init -y` command will initialize a new npm project with default settings, automatically generating a `package.json` file.
-
-## Remove any styles that are not in your project from .css build
-
-1. Add `epicConfig.js` file to the root of your project where your package.json lives.
+In your Epic CSS 11ty theme project root folder, you will see the `epicConfig.js` file. This is to configure a light build and will correspond with the Epic CSS 11ty theme folder structure.
 
 ```js
 module.exports = {
@@ -71,35 +43,15 @@ module.exports = {
 };
 ```
 
-2. Add the following commands as of version 0.3.0
+In the package.json file you will see the `epic-build` and `epic-light` commands. These are to update the pre-light.css file, and output a light version of the style.css file.
 
 ```js
-"epic-light": "node ./node_modules/epic-css/src/epic-light.js",
-"epic-build": "node ./node_modules/epic-css/src/epic-build.js"
+"epic-build": "node ./node_modules/epic-css/src/epic-build.js",
+"epic-light": "node ./node_modules/epic-css/src/epic-light.js"
 ```
 
-3. Run `npm run epic-build` to do a quick start and add a pr-styles.css to your project Epic CSS theme folder.
+3. Run `npm run epic-build` to update the pre-light.css file to your project, that the `epic-light` command can use to compare to your project file results.
 
-4. Then run `npm run epic-light` to search your project file from the projectDir and filter the found classes against the pre-light.css and build lightened version of your project styles.css.  
+4. Then run `npm run epic-light` to search your project files from the `projectDir` and filter out the found classes against pre-light.css class, then build a lightened version of your project style.css.
 
-
-## Known Issues
-
-None at the moment.
-
-## Release Notes
-
-### 0.2.0
-
-Initial release of epic-css
-
-### 0.3.0
-
--   Added epic-build - this builds like epic-compile but also adds a pre-light.css to the my-epic-css folder.
--   Added epic-light - this uses the pre-light.css to filter used project class results and builds to project style.css.
-
-## Contribution
-
-This extension is open-source, contributions are always welcome!
-
-This project is licensed under the ISC License.
+This will take the current Epic CSS UI library from 1426 lines of CSS down to only 303 lines of CSS for the Epic CSS 11ty theme. This gives you access to all the UI library styles during development and publishing only the styles you use in your project for production.

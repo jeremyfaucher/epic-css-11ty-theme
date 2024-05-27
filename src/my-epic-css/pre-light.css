@@ -10,26 +10,35 @@ p {
   line-height: 1.9rem;
 }
 
-h1, h2, h3, h4, p, ul {
+h1,
+h2,
+h3,
+h4,
+p,
+ul {
   margin-top: 0;
 }
 
-h1, .h1 {
+h1,
+.h1 {
   font-size: 32px;
   line-height: 48px;
 }
 
-h2, .h2 {
+h2,
+.h2 {
   font-size: 32px;
   line-height: 32px;
 }
 
-h3, .h3 {
+h3,
+.h3 {
   font-size: 28px;
   line-height: 28px;
 }
 
-h4, .h4 {
+h4,
+.h4 {
   font-size: 20px;
   line-height: 20px;
 }
@@ -75,6 +84,34 @@ a.underline-clr:hover {
 hr {
   border: 0;
   border-top: 1px dotted #efefef;
+}
+
+a.active,
+a:hover,
+a.underline-clr {
+  text-decoration: underline;
+  text-underline-offset: 1px;
+}
+
+pre {
+  background: #0b2938;
+  padding: 1.5em 14px;
+  margin-bottom: 2rem;
+  overflow: auto;
+  border-radius: 1rem;
+}
+
+code {
+  background: #0b2938;
+  padding: 4px 12px;
+  font-size: 1.2rem;
+  color: #f8f8f2;
+  overflow: auto;
+  border-radius: 4px;
+}
+
+pre code {
+  padding: 0px;
 }
 
 .text-center {

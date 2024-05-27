@@ -1,87 +1,127 @@
 // font ramp
 
 body {
-    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: $fs-body;
-    line-height: $lh-body;
-    color: #d4d4d4;
-    margin: 3px;
-  }
-  
-  p {
-    line-height: $lh-p;
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: $fs-body;
+  line-height: $lh-body;
+  color: #d4d4d4;
+  margin: 3px;
+}
+
+p {
+  line-height: $lh-p;
+}
+
+// set base for browsers
+h1,
+h2,
+h3,
+h4,
+p,
+ul {
+  margin-top: 0;
+}
+
+h1,
+.h1 {
+  font-size: $fs-h1;
+  line-height: $lh-h1;
+}
+
+h2,
+.h2 {
+  font-size: $fs-h2;
+  line-height: $fs-h2;
+}
+
+h3,
+.h3 {
+  font-size: $fs-h3;
+  line-height: $fs-h3;
+}
+
+h4,
+.h4 {
+  font-size: $fs-h4;
+  line-height: $fs-h4;
+}
+
+article {
+
+  h2 {
+    margin-bottom: 12px;
   }
 
-  // set base for browsers
-h1, h2, h3, h4, p, ul {
-    margin-top: 0;
+  p {
+    margin-top: 0px;
+    margin-bottom: 2rem;
   }
-  h1, .h1 {
-    font-size: $fs-h1;
-    line-height: $lh-h1;
-  }
-  
-  h2, .h2 {
-    font-size: $fs-h2;
-    line-height: $fs-h2;
-  }
-  h3, .h3 {
-    font-size: $fs-h3;
-    line-height: $fs-h3;
-  }
-  h4, .h4 {
-    font-size: $fs-h4;
-    line-height: $fs-h4;
-  }
-  
-  article {
-  
-    h2 {
-      margin-bottom: 12px;
-    }
-  
-    p {
-      margin-top: 0px;
-      margin-bottom: 2rem;
-    }
-    
-    ul {
+
+  ul {
     padding-left: 3rem;
     list-style-type: circle;
     line-height: 2rem;
+  }
 }
-  }
-  
-  h3 {
-    font-size: $fs-h3;
-    line-height: $fs-h3 !important;
-  }
-  
-  ul {
-    padding: 0;
-    list-style-type: none;
-  }
-  
-  a {
-    text-decoration: none;
-    text-underline-offset: 4px;
-    color: #d4d4d4;
-  
-    &:hover {
-      text-decoration: underline;
-    }
-  
-    &.underline-clr {
-      text-decoration: underline;
-    }
 
-    &.underline-clr:hover {
-      color: $clr-secondary;
-    }
-    
+h3 {
+  font-size: $fs-h3;
+  line-height: $fs-h3 !important;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  text-underline-offset: 4px;
+  color: #d4d4d4;
+
+  &:hover {
+    text-decoration: underline;
   }
-  
-  hr {
-    border: 0;
-    border-top: 1px dotted #efefef;
+
+  &.underline-clr {
+    text-decoration: underline;
   }
+
+  &.underline-clr:hover {
+    color: $clr-secondary;
+  }
+
+}
+
+hr {
+  border: 0;
+  border-top: 1px dotted #efefef;
+}
+
+a.active,
+a:hover,
+a.underline-clr {
+  text-decoration: underline;
+  text-underline-offset: 1px;
+}
+
+pre {
+  background: #0b2938;
+  padding: 1.5em 14px;
+  margin-bottom: 2rem;
+  overflow: auto;
+  border-radius: 1rem;
+}
+
+code {
+  background: #0b2938;
+  padding: 4px 12px;
+  font-size: 1.2rem;
+  color: #f8f8f2;
+  overflow: auto;
+  border-radius: 4px;
+}
+
+pre code {
+  padding: 0px;
+}
