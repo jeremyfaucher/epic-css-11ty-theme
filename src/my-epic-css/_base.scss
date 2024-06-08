@@ -46,6 +46,41 @@ h4,
   line-height: $fs-h4;
 }
 
+<<<<<<< HEAD
+=======
+main,
+article {
+
+  h2 {
+    margin-bottom: 12px;
+  }
+
+  p {
+    margin-top: 0px;
+    margin-bottom: 2rem;
+  }
+
+  a {
+    color: $clr-body;
+  
+    &:hover {
+      color: $clr-primary;
+    }
+  
+    &.underline-clr:hover {
+      color: $clr-primary;
+    }
+  
+  }
+
+  ul {
+    padding-left: 3rem;
+    list-style-type: circle;
+    line-height: 2rem;
+  }
+}
+
+>>>>>>> f84e724302a2a4e546f48fb3702734b16e06982d
 h3 {
   font-size: $fs-h3;
   line-height: $fs-h3 !important;
@@ -58,6 +93,10 @@ ul {
 
 a {
   text-decoration: none;
+<<<<<<< HEAD
+=======
+  text-underline-offset: 4px;
+>>>>>>> f84e724302a2a4e546f48fb3702734b16e06982d
   color: $clr-body;
 
   &:hover {

@@ -27,12 +27,21 @@ $lh-p: 1.9rem;
 // $clr-body: #d4d4d4;
 
 // Primary Colors
+<<<<<<< HEAD
 //$clr-primary: #3ccbd6;
 $clr-primary-dark: #0056b3;
 $clr-primary-light: #4d94ff;
 //$clr-primary-bg: #3ccbd6 !default;
 $clr-primary-light-bg: #3ccbd6;
 $clr-primary-dark-bg: #3ccbd6;
+=======
+//$clr-primary: #3ccbd6; //hsl(180deg 73% 69%) !default;
+$clr-primary-dark: #0056b3;   // Darker shade of primary color
+$clr-primary-light: #4d94ff;  // Lighter shade of primary color
+$clr-primary-bg: #3ccbd6 !default;
+$clr-primary-light-bg: #3ccbd6 !default;
+$clr-primary-dark-bg: #3ccbd6 !default;
+>>>>>>> f84e724302a2a4e546f48fb3702734b16e06982d
 
 // Secondary Colors
 $clr-secondary: #f82fab;
@@ -56,6 +65,16 @@ $clr-primary-bg: #3e1689;
 $clr-secondary: #c6c9e5;
 $clr-secondary-bg: #412677;
 
+
+// Color theme #2
+// $clr-body-bg: #1b093f;
+// $clr-body: #e6e1f1;
+// $clr-primary: #3ccbd6;
+
+// Color theme #3
+$clr-body-bg: #2e106a;
+$clr-body: #ffffff;
+$clr-primary: #00d886;
 
 // borders
 $base-border-thickness: 1px !default;
