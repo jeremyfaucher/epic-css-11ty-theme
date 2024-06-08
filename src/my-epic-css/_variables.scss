@@ -23,23 +23,39 @@ $container-width: 1000px;
 $fs-body: 1.125rem;
 $lh-body: 1.5rem;
 $lh-p: 1.9rem;
-$clr-body-bg: hsl(198deg 64% 11%);
+// $clr-body-bg: hsl(198deg 64% 11%);
+// $clr-body: #d4d4d4;
 
 // Primary Colors
-$clr-primary: #3ccbd6; //hsl(180deg 73% 69%) !default;
-$clr-primary-dark: #0056b3;   // Darker shade of primary color
-$clr-primary-light: #4d94ff;  // Lighter shade of primary color
-$clr-primary-bg: #3ccbd6 !default;
-$clr-primary-light-bg: #3ccbd6 !default;
-$clr-primary-dark-bg: #3ccbd6 !default;
+//$clr-primary: #3ccbd6;
+$clr-primary-dark: #0056b3;
+$clr-primary-light: #4d94ff;
+//$clr-primary-bg: #3ccbd6 !default;
+$clr-primary-light-bg: #3ccbd6;
+$clr-primary-dark-bg: #3ccbd6;
 
 // Secondary Colors
-$clr-secondary: #f82fab; //hsl(291, 78%, 45%) !default;
-$clr-secondary-dark: #218838;   // Darker shade of secondary color
-$clr-secondary-light: #34d058;  // Lighter shade of secondary color
-$clr-secondary-bg: #3ccbd6 !default;
-$clr-secondary-light-bg: #3ccbd6 !default;
-$clr-secondary-dark-bg: #3ccbd6 !default;
+$clr-secondary: #f82fab;
+$clr-secondary-dark: #218838;
+$clr-secondary-light: #34d058;
+$clr-secondary-bg: #3ccbd6;
+$clr-secondary-light-bg: #3ccbd6;
+$clr-secondary-dark-bg: #3ccbd6;
+
+// Color theme #2
+// $clr-body-bg: #1b093f;
+// $clr-body: #e6e1f1;
+// $clr-primary: #3ccbd6;
+
+// Color theme #3
+$clr-body: #ffffff;
+$clr-body-bg: #2e106a;
+$clr-primary: #00d886;
+$clr-primary-light: #00e78f;
+$clr-primary-bg: #3e1689;
+$clr-secondary: #c6c9e5;
+$clr-secondary-bg: #412677;
+
 
 // borders
 $base-border-thickness: 1px !default;

@@ -1,15 +1,27 @@
+.clr-body-bg {
+  background-color: $clr-body-bg;
+}
+
 .clr-primary {
-    color: $clr-primary;
-  }
-  
-  .clr-secondary {
-    color: $clr-secondary;
-  }
+  color: $clr-primary;
+}
 
-  a.clr-underline {
-    text-decoration-color: $clr-secondary;
-  } 
+.clr-primary-bg {
+  background: $clr-primary-bg;
+}
 
-  .clr-body-bg {
-    background-color: $clr-body-bg;
-  }
+.clr-secondary {
+  color: $clr-secondary;
+}
+
+.clr-secondary-bg {
+  background: $clr-secondary-bg;
+}
+
+.border-r-4 {
+  border-radius: 4px;
+}
+
+.border-r-16 {
+  border-radius: 16px;
+}

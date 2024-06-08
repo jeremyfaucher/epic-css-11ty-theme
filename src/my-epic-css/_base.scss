@@ -4,7 +4,7 @@ body {
   font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: $fs-body;
   line-height: $lh-body;
-  color: #d4d4d4;
+  color: $clr-body;
   margin: 3px;
 }
 
@@ -46,24 +46,6 @@ h4,
   line-height: $fs-h4;
 }
 
-article {
-
-  h2 {
-    margin-bottom: 12px;
-  }
-
-  p {
-    margin-top: 0px;
-    margin-bottom: 2rem;
-  }
-
-  ul {
-    padding-left: 3rem;
-    list-style-type: circle;
-    line-height: 2rem;
-  }
-}
-
 h3 {
   font-size: $fs-h3;
   line-height: $fs-h3 !important;
@@ -76,11 +58,11 @@ ul {
 
 a {
   text-decoration: none;
-  text-underline-offset: 4px;
-  color: #d4d4d4;
+  color: $clr-body;
 
   &:hover {
     text-decoration: underline;
+    text-underline-offset: 4px;
   }
 
   &.underline-clr {
@@ -93,31 +75,71 @@ a {
 
 }
 
+a.active,
+a:hover,
+a.underline-clr {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+main,
+article {
+
+  h2 {
+    margin-bottom: 12px;
+  }
+
+  p {
+    margin-top: 0px;
+    margin-bottom: 2rem;
+  }
+
+  a {
+    color: $clr-body;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+
+    &:hover {
+      color: $clr-primary;
+      text-underline-offset: 4px;
+    }
+
+    &.clr-underline {
+      color: $clr-primary;
+    }
+
+    &.clr-underline:hover {
+      color: $clr-primary-light;
+    }
+
+  }
+
+}
+
+article ul {
+  padding-left: 3rem;
+  list-style-type: circle;
+  line-height: 2rem;
+}
+
 hr {
   border: 0;
   border-top: 1px dotted #efefef;
 }
 
-a.active,
-a:hover,
-a.underline-clr {
-  text-decoration: underline;
-  text-underline-offset: 1px;
-}
-
 pre {
-  background: #0b2938;
+  background: $clr-secondary-bg;
   padding: 1.5em 14px;
   margin-bottom: 2rem;
   overflow: auto;
   border-radius: 1rem;
 }
 
-code {
-  background: #0b2938;
-  padding: 4px 12px;
+code:not(pre code) {
+  background: $clr-secondary-bg;
+  padding: 2px 8px;
   font-size: 1.2rem;
-  color: #f8f8f2;
+  color: $clr-secondary;
   overflow: auto;
   border-radius: 4px;
 }
