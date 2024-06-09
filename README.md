@@ -1,3 +1,5 @@
+<p>More documentation at <a href="https://epiccss.com" class="underline-clr target=" _blank"="" rel="noopener">Epic CSS</a>.</p>
+
 <h2>Clone and run the Epic CSS 11ty theme</h2>
 
 1. Make a project directory and navigate to it if you don't already have one.
