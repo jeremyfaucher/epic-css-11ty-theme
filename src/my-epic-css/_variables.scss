@@ -23,29 +23,36 @@ $container-width: 1000px;
 $fs-body: 1.125rem;
 $lh-body: 1.5rem;
 $lh-p: 1.9rem;
-// $clr-body-bg: hsl(198deg 64% 11%);
-// $clr-body: #d4d4d4;
 
 // Primary Colors
-//$clr-primary: #3ccbd6;
-$clr-primary-dark: #0056b3;
-$clr-primary-light: #4d94ff;
-//$clr-primary-bg: #3ccbd6 !default;
-$clr-primary-light-bg: #3ccbd6;
-$clr-primary-dark-bg: #3ccbd6;
+// $clr-primary-dark: #0056b3;
+// $clr-primary-light: #4d94ff;
+// $clr-primary-light-bg: #3ccbd6;
+// $clr-primary-dark-bg: #3ccbd6;
 
 // Secondary Colors
-$clr-secondary: #f82fab;
-$clr-secondary-dark: #218838;
-$clr-secondary-light: #34d058;
-$clr-secondary-bg: #3ccbd6;
-$clr-secondary-light-bg: #3ccbd6;
-$clr-secondary-dark-bg: #3ccbd6;
+// $clr-secondary-dark: #218838;
+// $clr-secondary-light: #34d058;
+// $clr-secondary-light-bg: #3ccbd6;
+// $clr-secondary-dark-bg: #3ccbd6;
+
+// Color theme #1
+// $clr-body-bg: hsl(198deg 64% 11%);
+// $clr-body: #d4d4d4;
+// $clr-primary: #3ccbd6;
+// $clr-primary-light: #4d94ff;
+// $clr-primary-bg: #3ccbd6;
+// $clr-secondary: #f82fab;
+// $clr-secondary-bg: #3ccbd6;
 
 // Color theme #2
-// $clr-body-bg: #1b093f;
+// $clr-body-bg: #27093f;
 // $clr-body: #e6e1f1;
 // $clr-primary: #3ccbd6;
+// $clr-primary-bg: #3ccbd6;
+// $clr-primary-light: #4d94ff;
+// $clr-secondary: #f82fab;
+// $clr-secondary-bg: #3ccbd6;
 
 // Color theme #3
 $clr-body: #ffffff;
