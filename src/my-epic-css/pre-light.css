@@ -2,7 +2,7 @@ body {
   font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 1.125rem;
   line-height: 1.5rem;
-  color: #e6e1f1;
+  color: #d4d4d4;
   margin: 3px;
 }
 
@@ -43,6 +43,19 @@ h4,
   line-height: 20px;
 }
 
+article h2 {
+  margin-bottom: 12px;
+}
+article p {
+  margin-top: 0px;
+  margin-bottom: 2rem;
+}
+article ul {
+  padding-left: 3rem;
+  list-style-type: circle;
+  line-height: 2rem;
+}
+
 h3 {
   font-size: 28px;
   line-height: 28px !important;
@@ -55,52 +68,17 @@ ul {
 
 a {
   text-decoration: none;
-  color: #e6e1f1;
+  text-underline-offset: 4px;
+  color: #d4d4d4;
 }
 a:hover {
   text-decoration: underline;
-  text-underline-offset: 4px;
 }
-
-a.active,
-a:hover {
+a.underline-clr {
   text-decoration: underline;
-  text-underline-offset: 4px;
 }
-
-main h2,
-article h2 {
-  margin-bottom: 12px;
-}
-main p,
-article p {
-  margin-top: 0px;
-  margin-bottom: 2rem;
-}
-main a,
-article a {
-  color: #e6e1f1;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-main a:hover,
-article a:hover {
-  color: #3ccbd6;
-  text-underline-offset: 4px;
-}
-main a.clr-underline,
-article a.clr-underline {
-  color: #3ccbd6;
-}
-main a.clr-underline:hover,
-article a.clr-underline:hover {
-  color: #4d94ff;
-}
-
-article ul {
-  padding-left: 3rem;
-  list-style-type: circle;
-  line-height: 2rem;
+a.underline-clr:hover {
+  color: #f82fab;
 }
 
 hr {
@@ -108,19 +86,26 @@ hr {
   border-top: 1px dotted #efefef;
 }
 
+a.active,
+a:hover,
+a.underline-clr {
+  text-decoration: underline;
+  text-underline-offset: 1px;
+}
+
 pre {
-  background: #3ccbd6;
+  background: #0b2938;
   padding: 1.5em 14px;
   margin-bottom: 2rem;
   overflow: auto;
   border-radius: 1rem;
 }
 
-code:not(pre code) {
-  background: #3ccbd6;
-  padding: 2px 8px;
+code {
+  background: #0b2938;
+  padding: 4px 12px;
   font-size: 1.2rem;
-  color: #f82fab;
+  color: #f8f8f2;
   overflow: auto;
   border-radius: 4px;
 }
@@ -153,32 +138,20 @@ pre code {
   font-weight: 700;
 }
 
-.clr-body-bg {
-  background-color: #27093f;
-}
-
 .clr-primary {
   color: #3ccbd6;
-}
-
-.clr-primary-bg {
-  background: #3ccbd6;
 }
 
 .clr-secondary {
   color: #f82fab;
 }
 
-.clr-secondary-bg {
-  background: #3ccbd6;
+a.clr-underline {
+  text-decoration-color: #f82fab;
 }
 
-.border-r-4 {
-  border-radius: 4px;
-}
-
-.border-r-16 {
-  border-radius: 16px;
+.clr-body-bg {
+  background-color: hsl(198, 64%, 11%);
 }
 
 img {

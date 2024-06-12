@@ -73,21 +73,10 @@ a:hover {
   text-underline-offset: 4px;
 }
 
-main,
-article {
-
-  h2 {
-    margin-bottom: 12px;
-  }
-
-  p {
-    margin-top: 0px;
-    margin-bottom: 2rem;
-  }
+main {
 
   a {
     color: $clr-body;
-    text-decoration: underline;
     text-underline-offset: 4px;
 
     &:hover {
@@ -95,9 +84,7 @@ article {
       text-underline-offset: 4px;
     }
 
-    &.clr-underline {
-      color: $clr-primary;
-    }
+    
 
     &.clr-underline:hover {
       color: $clr-primary-light;
@@ -105,36 +92,60 @@ article {
 
   }
 
-}
+  .clr-underline {
+    text-decoration: underline;
+    color: $clr-primary;
+  }
 
-article ul {
-  padding-left: 3rem;
-  list-style-type: circle;
-  line-height: 2rem;
-}
+  article a {
+      color: $clr-body;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
 
-hr {
-  border: 0;
-  border-top: 1px dotted #efefef;
-}
+      p {
+        margin-top: 0px;
+        margin-bottom: 2rem;
+      }
 
-pre {
-  background: $clr-secondary-bg;
-  padding: 1.5em 14px;
-  margin-bottom: 2rem;
-  overflow: auto;
-  border-radius: 1rem;
-}
+      iframe {
+        margin-bottom: 2rem;
+      }
 
-code:not(pre code) {
-  background: $clr-secondary-bg;
-  padding: 2px 8px;
-  font-size: 1.2rem;
-  color: $clr-secondary;
-  overflow: auto;
-  border-radius: 4px;
-}
+      h2 {
+        margin-bottom: 12px;
+      }
 
-pre code {
-  padding: 0px;
-}
+    }
+
+    article ul {
+      padding-left: 3rem;
+      list-style-type: circle;
+      line-height: 2rem;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px dotted #efefef;
+    }
+
+    pre {
+      background: $clr-secondary-bg;
+      padding: 1.5em 14px;
+      margin-bottom: 2rem;
+      overflow: auto;
+      border-radius: 1rem;
+    }
+
+    code:not(pre code) {
+      background: $clr-secondary-bg;
+      padding: 2px 8px;
+      font-size: 1.2rem;
+      color: $clr-secondary;
+      overflow: auto;
+      border-radius: 4px;
+    }
+
+    pre code {
+      padding: 0px;
+    }

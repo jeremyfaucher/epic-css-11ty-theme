@@ -57,7 +57,7 @@ eleventyConfig.addFilter("excerpt", (post) => {
   let result = text.replace(/<figure>.*<\/figure>/s, "");
 //return result;
   let content = result.replace(/(<([^>]+)>)/gi, "");
-  return content.substr(0, content.lastIndexOf(" ", 184));
+  return content.substr(0, content.lastIndexOf(" ", 150));
 });
 
   // Return your Object options:
