@@ -57,8 +57,8 @@ $justify-content-values: flex-start, flex-end, center, space-between, space-arou
 }
 
 // align content
-$align-content-name: start, end, center, between, around, stretch;
-$align-content-values: flex-start, flex-end, center, space-between, space-around, space-stretch;
+$align-content-name: start, end, center, between, around;
+$align-content-values: flex-start, flex-end, center, space-between, space-around;
 
 @each $val in $align-content-name {
   $align-content: nth($align-content-values, index($align-content-name, $val));
