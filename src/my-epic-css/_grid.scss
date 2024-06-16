@@ -69,8 +69,8 @@ $align-content-values: flex-start, flex-end, center, space-between, space-around
 }
 
 // align items
-$align-items-name: start, end, center, between, around, stretch;
-$align-items-values: flex-start, flex-end, center, space-between, space-around, space-stretch;
+$align-items-name: start, end, center, between stretch;
+$align-items-values: flex-start, flex-end, center, space-between space-stretch;
 
 @each $val in $align-items-name {
   $align-items: nth($align-items-values, index($align-items-name, $val));
@@ -192,4 +192,12 @@ $grid-fractions: (
   margin: 0 auto;
   max-width: 1000px;
   box-sizing: border-box;
+}
+
+@media (min-width: 756px) {
+  .left-sidebar-sm {
+    display: grid;
+    grid-template-columns: minmax(140px, auto) 1fr;
+    gap: 6%;
+  }
 }
