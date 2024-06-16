@@ -179,6 +179,9 @@ article img {
 .flex-col {
   flex-direction: column;
 }
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
 .grid-col-2 {
   grid-template-columns: repeat(auto-fit, minmax(331px, 1fr));
 }

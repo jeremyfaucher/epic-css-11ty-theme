@@ -267,6 +267,10 @@ article img {
   flex-direction: column;
 }
 
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
+
 .w-100 {
   width: 100%;
 }
