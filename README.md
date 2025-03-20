@@ -35,14 +35,16 @@
 In your Epic CSS 11ty theme project root folder, you will see the `epicConfig.js` file. This is to configure a light build and will correspond with the Epic CSS 11ty theme folder structure.
 
 ```js
-module.exports = {
-    // project source folder where html, nunjucks or php files are
+    module.exports = {
+    // Project source folder where HTML, Nunjucks, or PHP files are located from root
     projectDir: './src',
-    // where epic css theme folder lives
+    // Where your epic CSS theme lives from root
     epicThemeDir: './src/my-epic-css',
-    // folder and file where project style sheet lives
-    projectStyleDir: './src/_includes/style.css'
-};
+    // The directory where your CSS file will be saved
+    projectStyleDir: './src/_includes',
+    // The name of the final CSS file
+    outputFileName: 'style.css'
+    };
 ```
 
 In the package.json file you will see the `epic-build` and `epic-light` commands. These are to update the pre-light.css file, and output a light version of the style.css file.
