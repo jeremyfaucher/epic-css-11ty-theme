@@ -1,0 +1,95 @@
+// Define a SASS variable
+// Headings
+//
+// Set the heading variable
+$fs-h1: 32px;
+$fs-h2: 24px;
+$fs-h3: 20px;
+$fs-h4: 16px;
+
+// Set the heading font-weight variables
+$headings-font-weight: 600;
+
+// Set the line heights for headings variables
+$lh-h1: 48px;
+$fs-h2: 32px;
+$fs-h3: 28px;
+$fs-h4: 20px;
+
+// Grid
+$container-width: 1000px;
+
+// Body font-size and color
+$fs-body: 1.125rem;
+$lh-body: 1.5rem;
+$lh-p: 1.9rem;
+
+// Primary Colors
+// $clr-primary-dark: #0056b3;
+// $clr-primary-light: #4d94ff;
+// $clr-primary-light-bg: #3ccbd6;
+// $clr-primary-dark-bg: #3ccbd6;
+
+// Secondary Colors
+// $clr-secondary-dark: #218838;
+// $clr-secondary-light: #34d058;
+// $clr-secondary-light-bg: #3ccbd6;
+// $clr-secondary-dark-bg: #3ccbd6;
+
+// Color theme #1
+// $clr-body-bg: hsl(198deg 64% 11%);
+// $clr-body: #d4d4d4;
+// $clr-primary: #3ccbd6;
+// $clr-primary-light: #4d94ff;
+// $clr-primary-bg: #3ccbd6;
+// $clr-secondary: #f82fab;
+// $clr-secondary-bg: #3ccbd6;
+
+// Color theme #2
+// $clr-body-bg: #27093f;
+// $clr-body: #e6e1f1;
+// $clr-primary: #3ccbd6;
+// $clr-primary-bg: #3ccbd6;
+// $clr-primary-light: #4d94ff;
+// $clr-secondary: #f82fab;
+// $clr-secondary-bg: #3ccbd6;
+
+// Color theme #3
+$clr-body: #ffffff;
+$clr-body-bg: #2e106a;
+$clr-primary: #00d886;
+$clr-primary-light: #00e78f;
+$clr-primary-bg: #3e1689;
+$clr-secondary: #c6c9e5;
+$clr-secondary-bg: #412677;
+$clr-white: #ffffff;
+
+
+// borders
+$base-border-thickness: 1px !default;
+$base-border-radius: 20px !default;
+
+// box-shadow
+$base-box-shadow: 1px 3px 5px rgba(0,0,0,0.1) !default;
+
+// Spacers - gap, margin and padding - using rem
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  4: $spacer * 0.25,
+  6: $spacer * 0.375,
+  8: $spacer * 0.5,
+  10: $spacer * 0.625,
+  12: $spacer * 0.75,
+  16: $spacer * 1,
+  18: $spacer * 1,
+  20: $spacer * 1.25,
+  24: $spacer * 1.5,
+  32: $spacer * 2,
+  40: $spacer * 2.5,
+  56: $spacer * 3.5,
+  60: $spacer * 3.75,
+  64: $spacer * 4,
+  80: $spacer * 5,
+  100: $spacer * 6.25,
+);

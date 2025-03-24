@@ -1,13 +1,13 @@
 <div class="flex justify-end md-w-50">
 <a href="{{ post.url }}" class="latest-featured"><img src="{{ post.data.featuredImage }}" alt="{{ post.data.imageAlt }}"  width="1000" height="500"></a></div>
 <div class="md-w-50">
-<h2 class="mb-2"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+<h2 class="fs-20 lh-20 mb-16"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
 <div class="mb-24">by <span>{{ post.data.author }}</span> on <span>{{ post.date | postDate }}</span></div>
-<p>{%- if (post.data.excerpt) -%}{{ post.data.excerpt }}{%- else -%}{{ post.templateContent | excerpt }}{%- endif -%}<a href="{{ post.url }}" class="read-more clr-underline pl-4">read more...</a></p>
+<p class="fs-16 lh-20 mb-24">{%- if (post.data.excerpt) -%}{{ post.data.excerpt }}{%- else -%}{{ post.templateContent | excerpt }}{%- endif -%}<a href="{{ post.url }}" class="read-more clr-underline pl-4">read more...</a></p>
 <div class="flex justify-start">
 {%- if (tag == "tools-page") -%}
 {%- else -%}
-<a href="/blog/{{ post.data.categorySlug }}" class="clr-underline text-sm">{{ post.data.categoryName }}</a>
+<a href="/blog/{{ post.data.categorySlug }}" class="clr-underline fs-12">{{ post.data.categoryName }}</a>
 {%- endif -%}
 </div>
 </div>

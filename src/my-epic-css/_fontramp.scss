@@ -1,0 +1,147 @@
+// @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+// font sizes
+$text-base: 1rem !default;
+$text-sm: $text-base * 0.75 !default;
+$text-lg: $text-base * 1.5 !default;
+$text-xl: $text-base * 6 !default;
+
+.text-center {
+  text-align: center;
+}
+
+// Define SASS variables
+$fs-12: 12px;
+$fs-14: 14px;
+$fs-16: 16px;
+$fs-20: 20px;
+$fs-24: 24px;
+$fs-29: 29px;
+$fs-32: 32px;
+$fs-37: 37px;
+$fs-40: 40px;
+$fs-50: 50px;
+$fs-76: 76px;
+$fs-96: 96px;
+$fw-400: 400;
+$fw-600: 600;
+$fw-700: 700;
+
+// Define line heights
+$lh-12: 12px;
+$lh-14: 14px;
+$lh-16: 16px;
+$lh-20: 20px;
+$lh-24: 24px;
+$lh-29: 29px;
+$lh-32: 32px;
+$lh-37: 37px;
+$lh-50: 50px;
+$lh-76: 76px;
+$lh-96: 96px;
+
+:root {
+    --fs-12: #{$fs-12};
+    --fs-14: #{$fs-14};
+    --fs-16: #{$fs-16};
+    --fs-20: #{$fs-20};
+    --fs-24: #{$fs-24};
+    --fs-29: #{$fs-29};
+    --fs-32: #{$fs-32};
+    --fs-37: #{$fs-37};
+    --fs-40: #{$fs-40};
+    --fs-50: #{$fs-50};
+    --fs-76: #{$fs-76};
+    --fs-96: #{$fs-96};
+    --fw-400: #{$fw-400};
+    --fw-600: #{$fw-600};
+
+    --lh-12: #{$lh-12};
+    --lh-14: #{$lh-14};
+    --lh-16: #{$lh-16};
+    --lh-20: #{$lh-20};
+    --lh-24: #{$lh-24};
+    --lh-29: #{$lh-29};
+    --lh-32: #{$lh-32};
+    --lh-37: #{$lh-37};
+    --lh-50: #{$lh-50};
+    --lh-76: #{$lh-76};
+    --lh-96: #{$lh-96};
+}
+
+// Mobile-specific adjustments (below 1084px)
+@media (max-width: 1084px) {
+    :root {
+        --fs-12: 12px;
+        --fs-14: 12px;
+        --fs-16: 14px;
+        --fs-20: 18px;
+        --fs-24: 21px;
+        --fs-29: 24px;
+        --fs-32: 24px;
+        --fs-40: 28px;
+        --fs-37: 24px;
+        --fs-50: 32px;
+        --fs-76: 40px;
+        --fs-96: 48px;
+
+        --lh-12: 16px;
+        --lh-14: 18px;
+        --lh-16: 20px;
+        --lh-20: 24px;
+        --lh-24: 28px;
+        --lh-29: 32px;
+        --lh-32: 32px;
+        --lh-37: 34px;
+        --lh-40: 28px;
+        --lh-50: 38px;
+        --lh-76: 50px;
+        --lh-96: 54px;
+    }
+}
+
+// Font Sizes
+.fs-12 { font-size: var(--fs-12); }
+.fs-14 { font-size: var(--fs-14); }
+.fs-16 { font-size: var(--fs-16); }
+.fs-20 { font-size: var(--fs-20); }
+.fs-24 { font-size: var(--fs-24); }
+.fs-29 { font-size: var(--fs-29); }
+.fs-32 { font-size: var(--fs-32); }
+.fs-37 { font-size: var(--fs-37); }
+.fs-50 { font-size: var(--fs-50); }
+.fs-76 { font-size: var(--fs-76); }
+.fs-96 { font-size: var(--fs-96); }
+
+// Line Heights
+.lh-12 { line-height: var(--lh-12); }
+.lh-14 { line-height: var(--lh-14); }
+.lh-16 { line-height: var(--lh-16); }
+.lh-20 { line-height: var(--lh-20); }
+.lh-24 { line-height: var(--lh-24); }
+.lh-29 { line-height: var(--lh-29); }
+.lh-32 { line-height: var(--lh-32); }
+.lh-37 { line-height: var(--lh-37); }
+.lh-50 { line-height: var(--lh-50); }
+.lh-76 { line-height: var(--lh-76); }
+.lh-96 { line-height: var(--lh-96); }
+
+// Font weights
+.fw-400 {
+  font-weight: $fw-400;
+}
+.fw-600 {
+  font-weight: $fw-600;
+}
+
+.fw-700 {
+  font-weight: $fw-700;
+}
+
+// Line heights
+.lh-normal {
+  line-height: normal;
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}
