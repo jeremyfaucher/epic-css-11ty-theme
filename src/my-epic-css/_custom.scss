@@ -1,1 +1,46 @@
-// My custom styles
+// This file is for custom styles that are not part of the default theme.
+// You can override the default theme variables here.
+
+// $clr-body: #1e1e1e;
+// $clr-body-bg: #f8f8fc;
+// $clr-primary: #00796b;
+// $clr-primary-light: #33ab9f;
+// $clr-primary-bg: #e0f2f1;
+// $clr-secondary: #5c6bc0;
+// $clr-secondary-bg: #e8eaf6;
+// $clr-white: #ffffff;
+
+// Neutral dark text for readability
+// Soft light background with a hint of blue-gray
+// MS blue (core branding color)
+// Lighter version of primary for accents and hovers
+// Lightest tint for backgrounds and soft callouts
+// Muted gray for secondary text/elements
+// Light neutral background for contrast and depth
+// Base white, used in cards, buttons, etc.
+// $clr-body: #1e1e1e;
+// $clr-body-bg: #f4f6fa;         
+// $clr-primary: #0067b8;         
+// $clr-primary-light: #4f9eea;   
+// $clr-primary-bg: #dceeff;
+// $clr-secondary: #7a7574;       
+// $clr-secondary-bg: #ececec;    
+// $clr-white: #ffffff;
+
+
+// Neutral light text for readability
+// Deep dark background with a hint of blue-gray
+// MS blue (core branding color)
+// Lighter version of primary for accents and hovers
+// Deep tinted background for callouts
+// Muted gray for secondary text/elements
+// Dark neutral background for contrast and depth
+// Base white, used in cards, buttons, etc.
+$clr-body: #ffffff;
+$clr-body-bg: #0f172a;
+$clr-primary: #4f9eea;
+$clr-primary-light: #93c5fd;
+$clr-primary-bg: #1e293b;
+$clr-secondary: #94a3b8;
+$clr-secondary-bg: #1c1f2c;
+$clr-white: #ffffff;

@@ -208,14 +208,14 @@ main a {
   text-underline-offset: 4px;
 }
 main a:hover {
-  color: #00d886;
+  color: #4f9eea;
   text-underline-offset: 4px;
 }
 main a.clr-underline {
-  color: #00d886;
+  color: #4f9eea;
 }
 main a.clr-underline:hover {
-  color: #00e78f;
+  color: #93c5fd;
 }
 
 article {
@@ -276,7 +276,7 @@ hr {
 }
 
 pre {
-  background: #412677;
+  background: #1c1f2c;
   padding: 1.5em 14px;
   margin-bottom: 2rem;
   overflow-x: auto;
@@ -284,10 +284,10 @@ pre {
 }
 
 code:not(pre code) {
-  background: #412677;
+  background: #1c1f2c;
   padding: 2px 8px;
   font-size: 1.2rem;
-  color: #c6c9e5;
+  color: #94a3b8;
   overflow: auto;
   border-radius: 4px;
 }
@@ -330,23 +330,23 @@ pre code {
 }
 
 .clr-body-bg {
-  background-color: #2e106a;
+  background-color: #0f172a;
 }
 
 .clr-primary {
-  color: #00d886;
+  color: #4f9eea;
 }
 
 .clr-primary-bg {
-  background: #3e1689;
+  background: #1e293b;
 }
 
 .clr-secondary {
-  color: #c6c9e5;
+  color: #94a3b8;
 }
 
 .clr-secondary-bg {
-  background: #412677;
+  background: #1c1f2c;
 }
 
 .clr-white {
