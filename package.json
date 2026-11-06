@@ -4,6 +4,9 @@
   "description": "11ty Starter Theme",
   "main": "index.njk",
   "scripts": {
+    "build": "node scripts/build.cjs",
+    "validate": "node scripts/build.cjs --check",
+    "prestart": "sass src/my-epic-css/index.scss src/_includes/style.css",
     "start": "npm-run-all --parallel watch:*",
     "watch:start": "eleventy --serve",
     "build-production": "eleventy",

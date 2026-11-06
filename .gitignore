@@ -1,5 +1,6 @@
 # dependencies installed by npm
 node_modules
+.epic-check-*
 
 # build artefacts
 _site
