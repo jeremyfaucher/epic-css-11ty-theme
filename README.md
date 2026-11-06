@@ -38,7 +38,7 @@ Comment out all eight assignments of the active palette and uncomment all eight 
 
 These classes are explicitly defined by `_colors.scss`; changing a value changes their declarations, not their names or number. Full CSS contains all these utilities; filtered CSS may retain a subset (and may retain extra rules because matching uses substrings). The defaults do not create arbitrary color shades or new class names.
 
-The installed library's color assignments use `!default`, allowing the custom values imported first to survive. **The sibling library source now also uses `!default` color assignments**; its entry point does not import `_custom.scss`. This local fix has not been published or installed into consumers. Test override precedence before upgrading; do not assume identical package versions imply identical local files.
+This checkout's installed library copy uses `!default`, allowing the custom values imported first to survive. A fresh registry `0.14.0` install has unconditional colors and loses those overrides; do not rely on the locally modified installed copy. The isolated `0.14.1` candidate fixes this, but has not been published. **The sibling library source now also uses `!default` color assignments**; its entry point does not import `_custom.scss`. This local fix has not been published or installed into consumers. Test override precedence before upgrading; do not assume identical package versions imply identical local files.
 
 ## Small color change and production check
 
@@ -78,3 +78,9 @@ The installed Sass compiled this entry point successfully and resolved the libra
 `npm start` now compiles Sass once before launching the watchers. `npm run build` compiles full Sass, runs the installed class filter, and writes Eleventy pages/assets to `_site`. `npm run validate` performs that same filtered build in a fresh `.epic-check-*` directory, checks output files, restores the previous CSS include and pre-light bytes in a finally block, and removes temporary output. Stop watchers first and run one build/validation at a time.
 
 The previous temporary-directory EPERM is resolved in this runner by rendering output paths first and creating shared parents sequentially before Eleventy's concurrent writes. Both the starter (15 pages) and site (6 pages) now pass fresh filtered builds. This supersedes the earlier audit limitation; the legacy raw Eleventy command is unchanged. `build-production` remains Eleventy-only. `npm ci` and browser visual review have not been performed during this change.
+
+## Site-first propagation
+
+Develop and verify shared behavior/documentation on the Epic CSS site first, deploy it and run its production verification, then release the reviewed npm code/docs update. Only after that release should this starter's dependency and lockfile be updated to it and its filtered build validated. Follow the site's [release guide](https://github.com/jeremyfaucher/epic-css-site/blob/main/RELEASING.md). Do not silently replace an npm dependency with a local tarball in this repository; use disposable copies for candidate testing.
+
+The final packed 0.14.1 candidate was tested in a clean committed starter copy: `.clr-primary` correctly compiled to `#4f9eea`, and the filtered build passed all 15 pages. A fresh published 0.14.0 copy first reproduced the bug (`#00d886` overwrote the custom blue). The real dependency and lockfile remain at 0.14.0 pending verified npm publication. After publication, run `npm install epic-css@0.14.1 --save-exact`, `npm run validate`, preview, then commit/push the reviewed manifest and lockfile changes.
