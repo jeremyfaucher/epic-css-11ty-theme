@@ -38,7 +38,7 @@ Comment out all eight assignments of the active palette and uncomment all eight 
 
 These classes are explicitly defined by `_colors.scss`; changing a value changes their declarations, not their names or number. Full CSS contains all these utilities; filtered CSS may retain a subset (and may retain extra rules because matching uses substrings). The defaults do not create arbitrary color shades or new class names.
 
-This checkout's installed library copy uses `!default`, allowing the custom values imported first to survive. A fresh registry `0.14.0` install has unconditional colors and loses those overrides; do not rely on the locally modified installed copy. The isolated `0.14.1` candidate fixes this, but has not been published. **The sibling library source now also uses `!default` color assignments**; its entry point does not import `_custom.scss`. This local fix has not been published or installed into consumers. Test override precedence before upgrading; do not assume identical package versions imply identical local files.
+This checkout's installed 0.14.0 copy has local `!default` edits; a fresh published 0.14.0 copy loses consumer overrides. Version 0.14.1 fixes this and has now been published through GitHub Actions. The configured Microsoft registry currently returns E404/ETARGET for 0.14.1 even with a fresh metadata cache, so this starter's real manifest/lockfile update and published-package build check are still pending. Do not substitute the earlier local candidate for verification of the released artifact.
 
 ## Small color change and production check
 
@@ -65,7 +65,7 @@ module.exports = {
 
 The scanner supports raw `.html`, `.njk`, `.md`, not PHP or evaluated template/JavaScript classes. See the [workspace explanation](../README.md#what-pre-light-actually-does) for matching limitations. Do not run `epic-light` against a missing or stale full build.
 
-A theme-only palette change needs no npm publication. For shared utility changes, update/test the library separately and then update this consumer's dependency and lockfile. No automated release or deployment workflow was found. `netlify.toml` has no build command or publish directory; hosting settings must be checked separately. `src/_data/site.json` still identifies Design 2 SEO and should be reviewed when making a real site from this starter.
+A theme-only palette change needs no npm publication. For shared utility changes, update/test the library separately and then update this consumer's dependency and lockfile. The npm library now publishes through its GitHub release workflow. `netlify.toml` has no build command or publish directory; hosting settings must be checked separately. `src/_data/site.json` still identifies Design 2 SEO and should be reviewed when making a real site from this starter.
 
 ## Validation in this checkout
 
@@ -83,4 +83,10 @@ The previous temporary-directory EPERM is resolved in this runner by rendering o
 
 Develop and verify shared behavior/documentation on the Epic CSS site first, deploy it and run its production verification, then release the reviewed npm code/docs update. Only after that release should this starter's dependency and lockfile be updated to it and its filtered build validated. Follow the site's [release guide](https://github.com/jeremyfaucher/epic-css-site/blob/main/RELEASING.md). Do not silently replace an npm dependency with a local tarball in this repository; use disposable copies for candidate testing.
 
-The final packed 0.14.1 candidate was tested in a clean committed starter copy: `.clr-primary` correctly compiled to `#4f9eea`, and the filtered build passed all 15 pages. A fresh published 0.14.0 copy first reproduced the bug (`#00d886` overwrote the custom blue). The real dependency and lockfile remain at 0.14.0 pending verified npm publication. After publication, run `npm install epic-css@0.14.1 --save-exact`, `npm run validate`, preview, then commit/push the reviewed manifest and lockfile changes.
+The earlier local packed candidate passed the 15-page build and preserved the blue palette, but that is not verification of the newly published artifact. Once the approved registry exposes 0.14.1, run `npm install epic-css@0.14.1 --save-exact`, verify the installed package version and palette regression, then `npm run validate`, preview, and commit/push only the reviewed manifest/lockfile changes. The failed install attempt left both files unchanged.
+
+## Publishing ownership
+
+The assistant prepares, checks, commits and pushes reviewed changes to `jeremyfaucher/epic-css`. The user creates/publishes the GitHub release; `.github/workflows/npm-publish.yml` runs tests on Node 22 and publishes to npm with OIDC trusted publishing. The trusted publisher must match owner `jeremyfaucher`, repository `epic-css`, workflow `npm-publish.yml`, and permit **Allow npm publish**. Staging-only permission previously caused E403. Do not create another release just to update this starter.
+
+The next action is approved-registry propagation of the already published 0.14.1 package, not another npm release or local CLI login. If this registry continues returning E404/ETARGET, ask its administrators to refresh/approve `epic-css@0.14.1`; do not switch to the organization-blocked direct npm endpoint.
