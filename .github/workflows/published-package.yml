@@ -1,0 +1,56 @@
+name: Verify published Epic CSS
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Published epic-css version to test
+        required: true
+        default: '0.14.1'
+
+permissions:
+  contents: read
+
+jobs:
+  consumer:
+    runs-on: ubuntu-latest
+    env:
+      EPIC_VERSION: ${{ inputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org/
+      - name: Install locked starter dependencies
+        run: npm ci --ignore-scripts
+      - name: Install actual published package without changing tracked dependency files
+        run: npm install --no-save --package-lock=false --ignore-scripts "epic-css@$EPIC_VERSION"
+      - name: Verify release identity and library palette regression
+        run: |
+          node -e "require('node:assert/strict').equal(require('epic-css/package.json').version, process.env.EPIC_VERSION)"
+          npm view "epic-css@$EPIC_VERSION" version dist.integrity --json
+          node node_modules/epic-css/test/palette.cjs
+      - name: Verify starter palette overrides
+        run: |
+          node <<'NODE'
+          const assert = require('node:assert/strict');
+          const sass = require('sass');
+          const postcss = require('postcss');
+          const css = postcss.parse(sass.compile('src/my-epic-css/index.scss').css);
+          for (const [selector, property, expected] of [
+            ['.clr-primary', 'color', '#4f9eea'],
+            ['.clr-body-bg', 'background-color', '#0f172a'],
+          ]) {
+            let value;
+            css.walkRules(selector, rule => rule.walkDecls(property, decl => { value = decl.value; }));
+            assert.equal(value, expected, selector);
+          }
+          console.log('Published package preserves the starter palette.');
+          NODE
+      - name: Build filtered Eleventy site
+        run: npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: verified-starter-site
+          path: _site
