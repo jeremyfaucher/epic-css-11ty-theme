@@ -15,6 +15,24 @@ npm start
 
 `package.json` declares `epic-css: ^0.14.0` and Eleventy `^2.0.1`. The local installed library reports `0.14.0`. `src/my-epic-css/index.scss` imports `_custom.scss` first, then the installed library's `src/index.scss`. It does not use the sibling `../epic-css` source automatically.
 
+## Commands quick reference
+
+Run these commands from `epic-css-11ty-theme`, where this project's `package.json` lives.
+
+**For everyday editing, use `npm start`.** Leave that terminal running, open the local URL it prints, and save changes under `src`. Eleventy rebuilds the pages as you edit. If a change does not appear, check the terminal for errors, refresh the browser, and confirm you edited the template or heading used on that page. `_site` contains generated output that subsequent builds can overwrite. Local changes do not update a deployed website.
+
+| Command | What it does | When to use it |
+| --- | --- | --- |
+| `npm start` (also `npm run start`) | Automatically runs `prestart`, then starts both `watch:*` scripts in parallel. | Everyday local development: preview pages while editing HTML, templates, Markdown, or Sass. Stop with Ctrl+C. |
+| `npm run prestart` | Compiles `src/my-epic-css/index.scss` into `src/_includes/style.css` once. npm also runs this automatically before `start`; a failure prevents the watchers from starting. | Compile full CSS once without launching a server. |
+| `npm run watch:start` | Runs `eleventy --serve`: watches source files, rebuilds pages, and serves the local preview. | Run only the page watcher/server. It does not compile Sass. |
+| `npm run watch:sass` | Watches Sass and recompiles `src/_includes/style.css` when it changes. | Run only the Sass watcher. It does not serve or generate pages. |
+| `npm run build-production` | Runs Eleventy once, generating `_site` and copying configured assets using the existing CSS include. | Build pages separately after preparing CSS. It does not compile Sass or filter CSS. |
+| `npm run epic-build` | Compiles full Sass into `src/my-epic-css/pre-light.css` and copies it to `src/_includes/style.css`. | Prepare full CSS before filtering, or restore full CSS for debugging. |
+| `npm run epic-light` | Filters the existing `pre-light.css` using classes found in source files and writes the CSS include. | Run the CSS filtering step by itself, after compiling fresh full CSS. It does not compile Sass or generate pages. |
+
+Stop development watchers before preparing production output: the Sass watcher writes full CSS and can overwrite the filtered include. Use `npm start` while editing. For separate production steps, stop the watchers, run `npm run epic-build`, then `npm run epic-light`, then `npm run build-production`. When Netlify uses `npm run build-production`, the CSS include must already be prepared and committed or generated in an earlier deployment step.
+
 ## Palette ownership
 
 Edit [src/my-epic-css/_custom.scss](src/my-epic-css/_custom.scss). It contains three alternatives:
@@ -47,10 +65,12 @@ This checkout's installed 0.14.0 copy has local `!default` edits; a fresh publis
 3. Stop the watchers, then run sequentially:
 
 ```sh
-npm run build
+npm run epic-build
+npm run epic-light
+npm run build-production
 ```
 
-`epic-build` writes full `src/my-epic-css/pre-light.css` and copies it to `src/_includes/style.css`; `epic-light` filters it using source classes and overwrites the include. Eleventy writes `_site`. Preview the resulting pages after filtering too. `build-production` alone does not update CSS; Sass watch can overwrite the filtered include. Re-run `epic-build` to restore full CSS for debugging.
+`epic-build` writes full `src/my-epic-css/pre-light.css` and copies it to `src/_includes/style.css`; `epic-light` filters it using source classes and overwrites the include. `build-production` runs Eleventy using that existing CSS. Preview the resulting pages after filtering too. Sass watch can overwrite the filtered include. Re-run `epic-build` to restore full CSS for debugging. Netlify can use `npm run build-production` when CSS is prepared separately.
 
 The actual [epicConfig.js](epicConfig.js) uses:
 
@@ -67,23 +87,11 @@ The scanner supports raw `.html`, `.njk`, `.md`, not PHP or evaluated template/J
 
 A theme-only palette change needs no npm publication. For shared utility changes, update/test the library separately and then update this consumer's dependency and lockfile. The npm library now publishes through its GitHub release workflow. `netlify.toml` has no build command or publish directory; hosting settings must be checked separately. `src/_data/site.json` still identifies Design 2 SEO and should be reviewed when making a real site from this starter.
 
-## Validation in this checkout
-
-The installed Sass compiled this entry point successfully and resolved the library import. Output included `.clr-primary { color: #4f9eea; }` and `.clr-body-bg { background-color: #0f172a; }`, confirming current overrides. `npm run epic-build` and `npm run epic-light` passed. The original raw Eleventy runs intermittently failed with EPERM while creating temporary nested output directories. The new build runner pre-creates shared output parents sequentially, and fresh filtered builds now pass (15 pages, 12 copied files). Existing generated CSS and user edits were preserved. No publication/deployment was performed.
-
-
-
-## Repeatable build and validation
-
-`npm start` now compiles Sass once before launching the watchers. `npm run build` compiles full Sass, runs the installed class filter, and writes Eleventy pages/assets to `_site`. `npm run validate` performs that same filtered build in a fresh `.epic-check-*` directory, checks output files, restores the previous CSS include and pre-light bytes in a finally block, and removes temporary output. Stop watchers first and run one build/validation at a time.
-
-The previous temporary-directory EPERM is resolved in this runner by rendering output paths first and creating shared parents sequentially before Eleventy's concurrent writes. Both the starter (15 pages) and site (6 pages) now pass fresh filtered builds. This supersedes the earlier audit limitation; the legacy raw Eleventy command is unchanged. `build-production` remains Eleventy-only. `npm ci` and browser visual review have not been performed during this change.
-
 ## Site-first propagation
 
 Develop and verify shared behavior/documentation on the Epic CSS site first, deploy it and run its production verification, then release the reviewed npm code/docs update. Only after that release should this starter's dependency and lockfile be updated to it and its filtered build validated. Follow the site's [release guide](https://github.com/jeremyfaucher/epic-css-site/blob/main/RELEASING.md). Do not silently replace an npm dependency with a local tarball in this repository; use disposable copies for candidate testing.
 
-The earlier local packed candidate passed the 15-page build and preserved the blue palette, but that is not verification of the newly published artifact. Once the approved registry exposes 0.14.1, run `npm install epic-css@0.14.1 --save-exact`, verify the installed package version and palette regression, then `npm run validate`, preview, and commit/push only the reviewed manifest/lockfile changes. The failed install attempt left both files unchanged.
+The earlier local packed candidate passed the 15-page build and preserved the blue palette, but that is not verification of the newly published artifact. Once the approved registry exposes 0.14.1, run `npm install epic-css@0.14.1 --save-exact`, verify the installed package version and palette regression, then run `npm run epic-build`, `npm run epic-light`, and `npm run build-production`, preview, and commit/push only the reviewed manifest/lockfile changes. The failed install attempt left both files unchanged.
 
 ## Publishing ownership
 
