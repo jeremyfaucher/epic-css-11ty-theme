@@ -1,6 +1,6 @@
 {%- include 'breadcrumb-cat.njk' -%}
 {%- include 'category-intro.njk' -%}
-<ul class="grid grid-col-3 gap-32">
+<ul class="grid grid-col-3 gap-32 p-0">
 {%- if tag == 'tools-page' -%}
 {%- for post in collections.toolsPosts | reverse -%}
 {%- include 'post-card.njk' -%}

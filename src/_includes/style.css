@@ -301,6 +301,9 @@ article img {
 .gap-0 {
   gap: 0;
 }
+.p-0 {
+  padding: 0;
+}
 .mb-0 {
   margin-bottom: 0;
 }
