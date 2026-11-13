@@ -128,7 +128,7 @@ manifest and lockfile in a separate dependency update before relying on a fresh
 
 `start` uses npm-run-all to run Eleventy serve and Sass watch together. Follow the printed local URL (normally port 8080). Content lives in `src/index.njk`, `src/about/`, and `src/blog/`; shared page templates are in `src/_includes/`. `.eleventy.js` reads `src` and outputs `_site`. `base.njk` embeds the CSS include after CleanCSS minification.
 
-`package.json` declares `epic-css: ^0.14.3` and Eleventy `^2.0.1`. The local installed library reports `0.14.1`. `src/my-epic-css/index.scss` imports `_custom.scss` first, then the installed library's `src/index.scss`. It does not use the sibling `../epic-css` source automatically.
+`package.json` declares `epic-css: ^0.14.3` and Eleventy `^3.1.8`. The Eleventy 3 upgrade is pending installation: the configured registry only serves `epic-css` through 0.14.0, so `npm install` fails until 0.14.3 or later is available there, and the lockfile still pins Eleventy 2.0.1. The local installed library reports `0.14.1`. `src/my-epic-css/index.scss` imports `_custom.scss` first, then the installed library's `src/index.scss`. It does not use the sibling `../epic-css` source automatically.
 
 ## Commands quick reference
 
