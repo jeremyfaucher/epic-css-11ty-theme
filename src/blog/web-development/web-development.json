@@ -1,6 +1,7 @@
 {
 	"layout": "post.njk",
 	"author": "admin",
+	"category": "web-development",
 	"tags": ["webDevelopmentPosts", "blog"],
 	"tag": "web-development-post",
 	"categorySlug": "web-development/",

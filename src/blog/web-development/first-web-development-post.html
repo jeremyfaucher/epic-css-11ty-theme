@@ -1,16 +1,16 @@
 ---
-title: First Web Development Post
+title: Keep category content in shared data
 date: 2019-03-11
 featuredImage: /assets/blog/featured-image/design2seo-11ty-theme.webp
 image: /assets/blog/design2seo-11ty-theme.jpg
-imageAlt: I'm baby fashion axe swag actually, retro man
-description: I'm baby fashion axe swag actually, retro man bun migas photo booth palo santo. Unicorn chillwave pork belly put a bird on it selvage gastropub celiac migas gochujang pour-over locavore keytar man braid sustainable shabby chic.
+imageAlt: Epic CSS with 11ty UI Library, with colorful geometric shapes
+description: The theme stores category labels, URLs, collection names and landing-page copy in one data file. Shared templates read those records instead of maintaining separate category branches.
 ---
 <img src="/assets/blog/design2seo-11ty-theme.jpg" alt="" width="1000" height="500">
-<p>YOLO pop-up synth fixie slow-carb fingerstache before they sold out twee readymade church-key DIY meh umami crucifix offal. PBR&B craft beer photo booth lyft gastropub 90's.</p>
-<h2>This is a H2 Heading</h2>
+<p>Each category record provides a name, URL and collection name. The listing template selects that collection and renders the same post-card loop, keeping the page structure shared as the content changes.</p>
+<h2>Change the record, reuse the template</h2>
 <img src="/assets/blog/design2seo-11ty-theme.jpg" class="center" width="318" height="auto" alt="">
-<p class="no-top no-bottom">I'm baby fashion axe swag actually, retro man bun migas photo booth palo santo. Unicorn chillwave pork belly put a bird on it selvage gastropub.</p>
-<p>YOLO pop-up synth fixie slow-carb fingerstache before they sold out twee readymade church-key DIY meh umami crucifix offal. PBR&B craft beer photo booth lyft gastropub 90's.</p>
+<p class="no-top no-bottom">Keep page and post metadata distinct. A category introduction describes a collection, while an article title and description should explain the individual piece of content.</p>
+<p>Category landing pages read their SEO title and description from the selected record. Individual posts keep their own front matter, so inheriting a category does not replace the title and description of an article.</p>
 
-<p>Chicharrones schlitz austin tote bag, flannel flexitarian hell of tilde etsy polaroid taxidermy pour-over humblebrag squid. Listicle 90's hot chicken, messenger bag vegan activated charcoal banh mi.</p>
+<p>Adding a category still needs content and page wiring. Use the matching key in directory data and on the landing page, then build the site to check its listing, sidebar link and post breadcrumbs.</p>

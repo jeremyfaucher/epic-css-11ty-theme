@@ -4,8 +4,8 @@ tag: home-page
 ---
 <section>
 <div class="text-center margin-auto md-w-75 mb-80">
-<h1 class="fs-32 lh-32 mb-24">Easy to manage & high performace.</h1>
-<p><a href="https://epiccss.com" class="clr-underline">Epic CSS</a> is a utility-first UI library that only outputs the styles you use. <a href="https://github.com/jeremyfaucher/epic-css-11ty-theme" class="clr-underline">Clone the Epic CSS 11ty theme</a> from Github to see the future of the web.</p>
+<h1 class="fs-32 lh-32 mb-24">Content and layout, kept in step.</h1>
+<p><a href="https://epiccss.com" class="clr-underline">Epic CSS</a> supplies the utility classes, and Eleventy builds pages from content and shared templates. <a href="https://github.com/jeremyfaucher/epic-css-11ty-theme" class="clr-underline">Clone the Epic CSS 11ty theme</a> to explore the structure and adapt the sample pages.</p>
 </div>
 <div class="container flex flex-col md-flex-row gap-40 items-start mb-80">
 {%- for post in collections.blog | reverse | limit_latest(1) -%}
@@ -15,15 +15,15 @@ tag: home-page
 </section>
 <section class="mb-80">
 <div class="md-w-75">
-<h2 class="fs-24 lh-24 mb-24">Typewriter wolf ugh shoreditch brunch tote bag.</h2>
-<p>I'm baby hot chicken bitters irony thundercats etsy direct trade chillwave kickstarter truffaut unicorn crucifix shaman farm-to-table mixtape. Man braid wolf adaptogen chambray, irony chartreuse 90's shabby chic viral banjo live-edge.</p>
-<p>Kitsch crucifix truffaut chia flexitarian quinoa, tbh health goth man braid tote bag ramps raclette helvetica craft beer squid. Kitsch air plant gochujang, wolf occupy tumeric umami art party taiyaki celiac mustache tweet adaptogen chambray, irony chartreuse.</p>
-<p>Trust fund retro seitan knausgaard, leggings kale chips echo park meh. Glossier viral before they sold out hashtag taiyaki. Lo-fi 3 wolf moon vice cloud bread mixtape art party everyday carry taxidermy cronut raw denim put a bird on photo booth blog.</p>
+<h2 class="fs-24 lh-24 mb-24">Give shared content a clear home.</h2>
+<p>Category records keep names, URLs, collection names, introductions and landing-page metadata together. The listing, sidebar and breadcrumb templates read that shared data, so a category does not need a separate rendering branch in each template.</p>
+<p>The blog layout places a flexible post list beside a fixed-width category sidebar on wider screens. On smaller screens the sidebar follows the posts. The introduction sits above both columns, giving the page a clear starting point.</p>
+<p>Shared templates support consistent changes as more content is added. Review the generated pages after an edit, including headings, navigation and metadata. Performance and accessibility still need checks with the content, images and settings used by the finished site.</p>
 </div>
 </section>
 <section class="mb-80">
 <h2 class="mb-2">Recent Blog Posts</h2>
-<p class="mb-24">YOLO pop-up synth fixie, slow-carb, fingerstache.</p>
+<p class="mb-24">Notes on shared templates, responsive layouts and visual design.</p>
 <div class="grid grid-col-2 gap-32">
 {%- for post in collections.blog | reverse | limit(5) -%}
   {% include 'post-summary.njk' %}

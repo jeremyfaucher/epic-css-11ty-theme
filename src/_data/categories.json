@@ -1,0 +1,55 @@
+{
+  "graphic-design": {
+    "name": "Graphic Design",
+    "url": "/blog/graphic-design/",
+    "collection": "graphicDesignPosts",
+    "intro": {
+      "heading": "Latest Graphic Design Posts",
+      "description": "Scale, proximity and contrast help organize a page before anyone reads it closely. These sample posts look at how a few visual choices can show relationships between elements. Use them to compare headings, images and spacing in the shared article layout."
+    },
+    "seo": {
+      "title": "Graphic Design Blog - 11ty Theme",
+      "description": "Sample articles on scale, proximity, contrast and harmony, showing how visual relationships help organize headings, images and text."
+    }
+  },
+  "web-design": {
+    "name": "Web Design",
+    "url": "/blog/web-design/",
+    "collection": "webDesignPosts",
+    "intro": {
+      "heading": "Latest Web Design Posts",
+      "description": "A page needs a reading order that holds up as the available space changes. These sample posts explore alignment, repetition and spacing in layouts with different content lengths. Compare the wide and narrow views to see how the same elements form different arrangements.",
+      "headingClass": "fs-20 fw-600 fs-20 fw-600 mb-0"
+    },
+    "seo": {
+      "title": "Web Design Blog - 11ty Theme",
+      "description": "Sample articles on alignment, repetition and spacing, with responsive layouts that place content and category navigation side by side or in sequence."
+    }
+  },
+  "web-development": {
+    "name": "Web Development",
+    "url": "/blog/web-development/",
+    "collection": "webDevelopmentPosts",
+    "intro": {
+      "heading": "Latest Web Development Posts",
+      "description": "Content, category records and shared templates each have a distinct role in this theme. These sample posts explain how those parts work together and what to check after an edit. Build the site to review the generated pages, then test the layout and navigation in context."
+    },
+    "seo": {
+      "title": "Web Development - Design 2 SEO",
+      "description": "Building resilient and agile websites takes continual learning as a web developer. I aim to be a resource that will give you an architectural understanding and a plan for creating robust developments."
+    }
+  },
+  "blog": {
+    "name": "Blog",
+    "url": "/blog/",
+    "collection": "blog",
+    "intro": {
+      "heading": "Recent Blog Posts",
+      "description": "These posts cover the theme structure and a few basic design principles. Category records supply listing copy and navigation labels, while shared templates render the pages. Browse by topic or compare the samples to see how different text lengths fit the same layout."
+    },
+    "seo": {
+      "title": "Blog - 11ty Theme",
+      "description": "Browse sample posts about the Eleventy theme, shared category data, responsive layouts and basic design principles."
+    }
+  }
+}

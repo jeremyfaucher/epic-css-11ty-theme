@@ -1,6 +1,7 @@
 {
 	"layout": "post.njk",
 	"author": "admin",
+	"category": "graphic-design",
 	"tags": ["graphicDesignPosts", "blog"],
 	"tag": ["graphic-design-post"],
 	"categorySlug": "graphic-design/",

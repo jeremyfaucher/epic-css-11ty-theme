@@ -1,46 +1,52 @@
-// This file is for custom styles that are not part of the default theme.
-// You can override the default theme variables here.
+// ============================================================================
+// LAYOUT / CONTAINER
+// Site-owned settings; the shared module's defaults stay unchanged.
+// ============================================================================
+$container-width: 1060px;
 
-// $clr-body: #1e1e1e;
-// $clr-body-bg: #f8f8fc;
-// $clr-primary: #00796b;
-// $clr-primary-light: #33ab9f;
-// $clr-primary-bg: #e0f2f1;
-// $clr-secondary: #5c6bc0;
-// $clr-secondary-bg: #e8eaf6;
-// $clr-white: #ffffff;
+// ============================================================================
+// COLORS / PALETTE SELECTION
+// Harbor (blue, default) / Dusk (charcoal/lavender) / Neon (black/coral/teal).
+// Change this one name, then rebuild Sass. Each choice is one static palette.
+// These are the workshop's dark variants; this theme has no light/dark toggle.
+// ============================================================================
+$palette-name: "Harbor" !default;
 
-// Neutral dark text for readability
-// Soft light background with a hint of blue-gray
-// MS blue (core branding color)
-// Lighter version of primary for accents and hovers
-// Lightest tint for backgrounds and soft callouts
-// Muted gray for secondary text/elements
-// Light neutral background for contrast and depth
-// Base white, used in cards, buttons, etc.
-// $clr-body: #1e1e1e;
-// $clr-body-bg: #f4f6fa;         
-// $clr-primary: #0067b8;         
-// $clr-primary-light: #4f9eea;   
-// $clr-primary-bg: #dceeff;
-// $clr-secondary: #7a7574;       
-// $clr-secondary-bg: #ececec;    
-// $clr-white: #ffffff;
+// PRESETS — eight semantic roles; "white" always stays white.
+$palettes: (
+  "Harbor": (
+    body: #ffffff, body-bg: #0f172a,
+    primary: #4f9eea, primary-light: #93c5fd, primary-bg: #1e293b,
+    secondary: #94a3b8, secondary-bg: #1c1f2c, "white": #ffffff
+  ),
+  "Dusk": (
+    body: #f4f2f8, body-bg: #201f2b,
+    primary: #b09aee, primary-light: #d3c5ff, primary-bg: #302a42,
+    secondary: #c3bfd0, secondary-bg: #282731, "white": #ffffff
+  ),
+  "Neon": (
+    body: #ffffff, body-bg: #000000,
+    primary: #ff7956, primary-light: #ffb39d, primary-bg: #202020,
+    secondary: #63dacb, secondary-bg: #282828, "white": #ffffff
+  )
+);
 
+@if not map-has-key($palettes, $palette-name) {
+  @error "Unknown palette '#{$palette-name}'. Choose Harbor, Dusk or Neon.";
+}
 
-// Neutral light text for readability
-// Deep dark background with a hint of blue-gray
-// MS blue (core branding color)
-// Lighter version of primary for accents and hovers
-// Deep tinted background for callouts
-// Muted gray for secondary text/elements
-// Dark neutral background for contrast and depth
-// Base white, used in cards, buttons, etc.
-$clr-body: #ffffff;
-$clr-body-bg: #0f172a;
-$clr-primary: #4f9eea;
-$clr-primary-light: #93c5fd;
-$clr-primary-bg: #1e293b;
-$clr-secondary: #94a3b8;
-$clr-secondary-bg: #1c1f2c;
-$clr-white: #ffffff;
+// SEMANTIC WIRING — custom imports before the library's central !default values.
+// body/body-bg: text/page; primary/primary-bg: accents/surface;
+// primary-light: hover; secondary/secondary-bg: supporting text/surface.
+$palette: map-get($palettes, $palette-name);
+$clr-body: map-get($palette, body);
+$clr-body-bg: map-get($palette, body-bg);
+$clr-primary: map-get($palette, primary);
+$clr-primary-light: map-get($palette, primary-light);
+$clr-primary-bg: map-get($palette, primary-bg);
+$clr-secondary: map-get($palette, secondary);
+$clr-secondary-bg: map-get($palette, secondary-bg);
+$clr-white: map-get($palette, "white");
+
+// Disable the shared module's optional runtime modes for this static theme.
+$color-modes: ();

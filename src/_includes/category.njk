@@ -1,29 +1,17 @@
+{%- set categoryData = categories[category] -%}
 {%- include 'breadcrumb-cat.njk' -%}
 {%- include 'category-intro.njk' -%}
-<ul class="grid grid-col-3 gap-32 p-0">
-{%- if tag == 'tools-page' -%}
-{%- for post in collections.toolsPosts | reverse -%}
-{%- include 'post-card.njk' -%}
-{%- endfor -%}
-{%- elif tag == 'graphic-design-page' -%}
-{%- for post in collections.graphicDesignPosts | reverse -%}
-{%- include 'post-card.njk' -%}
-{%- endfor -%}
-{%- elif tag == 'web-design-page' -%}
-{%- for post in collections.webDesignPosts | reverse -%}
-{%- include 'post-card.njk' -%}
-{%- endfor -%}
-{%- elif tag == 'seo-page' -%}
-{%- for post in collections.seoPosts | reverse -%}
-{%- include 'post-card.njk' -%}
-{%- endfor -%}
-{%- elif tag == 'web-development-page' -%}
-{%- for post in collections.webDevelopmentPosts | reverse -%}
-{%- include 'post-card.njk' -%}
-{%- endfor -%}
-{%- else -%}
-{%- for post in collections.blog | reverse -%}
-{%- include 'post-card.njk' -%}
-{%- endfor -%}
+<div class="grid grid-sidebar-right-268 gap-40 items-start">
+<div>
+<ul class="grid grid-col-3 gap-32 p-0 m-0">
+{%- set categoryPosts = collections.blog -%}
+{%- if categoryData -%}
+{%- set categoryPosts = collections[categoryData.collection] -%}
 {%- endif -%}
+{%- for post in categoryPosts | reverse -%}
+{%- include 'post-card.njk' -%}
+{%- endfor -%}
 </ul>
+</div>
+{% include 'sidebar.njk' %}
+</div>

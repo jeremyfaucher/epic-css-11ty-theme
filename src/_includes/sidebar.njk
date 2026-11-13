@@ -1,0 +1,12 @@
+<aside class="clr-primary-bg p-24 border-r-16" aria-labelledby="sidebar-categories-heading">
+  <h2 id="sidebar-categories-heading" class="fs-24 lh-32 mt-0 mb-16">Categories</h2>
+  <nav aria-label="Blog categories">
+    <ul class="list-none pl-0 mb-0">
+    {%- for categoryKey, sidebarCategory in categories -%}
+      {%- if categoryKey != 'blog' %}
+      <li class="mb-12"><a href="{{ sidebarCategory.url }}"{% if page.url == sidebarCategory.url %} aria-current="page"{% endif %}>{{ sidebarCategory.name }}</a></li>
+      {%- endif -%}
+    {%- endfor %}
+    </ul>
+  </nav>
+</aside>

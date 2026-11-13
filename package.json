@@ -1,9 +1,11 @@
 {
   "name": "eleventy-theme-design2seo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "11ty Starter Theme",
   "main": "index.njk",
   "scripts": {
+    "test:palettes": "node scripts/test-palettes.cjs",
+    "check:copy": "node scripts/check-demo-copy.cjs",
     "prestart": "sass src/my-epic-css/index.scss src/_includes/style.css",
     "start": "npm-run-all --parallel watch:*",
     "watch:start": "eleventy --serve",
