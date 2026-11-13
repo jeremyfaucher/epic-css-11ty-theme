@@ -6,6 +6,9 @@ node_modules
 _site
 backups
 
+# local maintenance scripts
+scripts/
+
 # secrets and errors
 .env
 .log
