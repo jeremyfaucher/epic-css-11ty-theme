@@ -20,7 +20,7 @@
 <body class="clr-body-bg">
 <div class="wrapper">
 {% include 'header.njk' %}
-<main class="container mb-80">
+<main class="{{ 'container-post' if postContainer else 'container' }} mb-80">
 {{ content | safe }}
 </main>
 {% include 'footer.njk' %}

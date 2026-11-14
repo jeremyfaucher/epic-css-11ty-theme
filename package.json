@@ -19,7 +19,7 @@
   "license": "ISC",
   "dependencies": {
     "bufferutil": "^4.0.5",
-    "epic-css": "^0.14.3",
+    "epic-css": "^0.14.5",
     "utf-8-validate": "^5.0.7"
   },
   "devDependencies": {

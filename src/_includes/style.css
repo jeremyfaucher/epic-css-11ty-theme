@@ -28,6 +28,9 @@
 .fs-12 {
   font-size: var(--fs-12);
 }
+.fs-14 {
+  font-size: var(--fs-14);
+}
 .fs-16 {
   font-size: var(--fs-16);
 }
@@ -85,6 +88,8 @@ a:hover {
   text-underline-offset: 4px;
 }
 a.active,
+a[aria-current=page],
+a[aria-current=true],
 a:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
@@ -111,6 +116,8 @@ ul.list-none {
 }
 main a {
   color: var(--clr-body, #ffffff);
+}
+main a:not(nav a) {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -202,11 +209,20 @@ pre code {
 .overflow-x-auto {
   overflow-x: auto;
 }
+.scrollbar-none {
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
 .scroll-snap-x-mandatory {
   scroll-snap-type: x mandatory;
 }
 .snap-start {
   scroll-snap-align: start;
+}
+.cursor-pointer {
+  cursor: pointer;
 }
 :root {
   --clr-body: #ffffff;
@@ -241,8 +257,17 @@ pre code {
   color: var(--clr-secondary, #94a3b8);
   background: var(--clr-secondary-bg, #1c1f2c);
 }
+.border-r-4 {
+  border-radius: 4px;
+}
 .border-r-16 {
   border-radius: 16px;
+}
+.border-none {
+  border: none;
+}
+.w-auto {
+  width: auto;
 }
 img {
   max-width: 100%;
@@ -309,12 +334,6 @@ img.center {
 .grid {
   display: grid;
 }
-.grid-sidebar-right-268 {
-  grid-template-columns: minmax(0, 1fr);
-}
-.grid-sidebar-right-344 {
-  grid-template-columns: minmax(0, 1fr);
-}
 .flex-row {
   flex-direction: row;
 }
@@ -323,6 +342,21 @@ img.center {
 }
 .flex-basis-300 {
   flex: 0 0 300px;
+}
+.flex-basis-100 {
+  flex: 0 0 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+.w-max {
+  width: max-content;
+}
+.scroll-gutter-container {
+  padding-inline: max(5vw, (100vw - 1060px) / 2);
+  scroll-padding-inline: max(5vw, (100vw - 1060px) / 2);
 }
 .flex-wrap {
   flex-wrap: wrap;
@@ -346,12 +380,8 @@ img.center {
 }
 .container-post {
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: 900px;
   box-sizing: border-box;
-}
-.grid-sidebar-left {
-  grid-template-columns: 1fr;
-  /* Stacks sidebar on mobile */
 }
 .gap-0 {
   gap: 0;
@@ -374,8 +404,14 @@ img.center {
 .gap-4 {
   gap: 0.25rem;
 }
+.p-4 {
+  padding: 0.25rem;
+}
 .pl-4 {
   padding-left: 0.25rem;
+}
+.mt-4 {
+  margin-top: 0.25rem;
 }
 .mb-4 {
   margin-bottom: 0.25rem;
@@ -434,8 +470,14 @@ img.center {
 .gap-40 {
   gap: 2.5rem;
 }
+.p-40 {
+  padding: 2.5rem;
+}
 .pl-40 {
   padding-left: 2.5rem;
+}
+.mt-40 {
+  margin-top: 2.5rem;
 }
 .mb-40 {
   margin-bottom: 2.5rem;
@@ -532,55 +574,41 @@ img.center {
     flex-direction: row;
   }
 }
-@media (min-width: 1040px) {
-  .grid-sidebar-right-268 {
-    grid-template-columns: minmax(0, 1fr) 268px;
-  }
-}
-@media (min-width: 1040px) {
-  .grid-sidebar-right-344 {
-    grid-template-columns: minmax(0, 1fr) 344px;
-  }
-}
 @media (min-width: 820px) {
   .flex-md {
     display: flex;
   }
 }
+@media (min-width: 960px) {
+  .flex-lg {
+    display: flex;
+  }
+  .order-lg-last {
+    order: 1;
+  }
+}
 @media (min-width: 820px) {
-  .grid-1fr-4fr-md {
+  .grid-md-1fr-4fr {
     grid-template-columns: 1fr 4fr;
   }
 }
 @media (min-width: 960px) {
-  .grid-1fr-4fr-md {
-    grid-template-columns: 1fr 4fr;
+  .grid-sidebar-right-lg-208px {
+    grid-template-columns: minmax(0, 1fr) 208px;
   }
-  /* Left Sidebar (Percentage Widths) */
-  .lg-grid-sidebar-left-25 {
-    grid-template-columns: 25% 1fr;
+  .grid-sidebar-left-lg-208px {
+    grid-template-columns: 208px minmax(0, 1fr);
   }
-  .lg-grid-sidebar-left-30 {
-    grid-template-columns: 30% 1fr;
+  .grid-sidebar-right-lg-268px {
+    grid-template-columns: minmax(0, 1fr) 268px;
   }
-  .lg-grid-sidebar-left-40 {
-    grid-template-columns: 40% 1fr;
+  .grid-sidebar-left-lg-268px {
+    grid-template-columns: 268px minmax(0, 1fr);
   }
-  /* Responsive Adjustments */
-}
-@media (min-width: 960px) and (max-width: 1024px) {
-  .lg-grid-sidebar-left-25,
-  .lg-grid-sidebar-left-30,
-  .lg-grid-sidebar-left-40,
-  .grid-1fr-4fr-md {
-    grid-template-columns: 1fr;
-    /* Stacks sidebar on smaller screens */
+  .grid-sidebar-right-lg-344px {
+    grid-template-columns: minmax(0, 1fr) 344px;
   }
-}
-@media (min-width: 756px) {
-  .left-sidebar-sm {
-    display: grid;
-    grid-template-columns: minmax(140px, auto) 1fr;
-    gap: 6%;
+  .grid-sidebar-left-lg-344px {
+    grid-template-columns: 344px minmax(0, 1fr);
   }
 }

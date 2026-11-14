@@ -3,6 +3,14 @@
 // Site-owned settings; the shared module's defaults stay unchanged.
 // ============================================================================
 $container-width: 1060px;
+$container-post-width: 900px;
+
+// Shared sidebar sizes; keep narrow navigation and wider author profiles available.
+$sidebar-widths: (
+  narrow: 208px,
+  compact: 268px,
+  wide: 344px,
+);
 
 // ============================================================================
 // COLORS / PALETTE SELECTION
